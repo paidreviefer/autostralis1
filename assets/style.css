@@ -1,190 +1,111 @@
-html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
-
-/* --- Home: Client logos shiny reveal --- */
-.logo-wrap{
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: scale(0.92);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.logo-wrap.visible{ opacity:1; transform: scale(1); }
-.logo-wrap::after{
-  content:""; position:absolute; top:0; left:-70%; width:50%; height:100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-20deg); opacity:0;
-}
-.logo-wrap.shine::after{ opacity:1; animation: shineSweep .9s ease-out forwards; }
-@keyframes shineSweep{ to { left: 120%; } }
-
-/* ========== Scroll reveal for sections ========== */
-.reveal-section{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.reveal-section.is-visible{
-  opacity: 1;
-  transform: translateY(0);
+/* ========== Base / Reset ========== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+  color: #e5e5e5;
+  background: #0a0a0a;
+  line-height: 1.4;
 }
 
-/* ========== Button shine (hover) ========== */
-.btn-shine{
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-.btn-shine::after{
-  content:"";
-  position: absolute;
-  top: -120%;
-  left: -50%;
-  width: 50%;
-  height: 300%;
-  transform: rotate(25deg);
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%,
-                                     rgba(255,255,255,.45) 45%,
-                                     rgba(255,255,255,0) 70%);
-  opacity: 0;
-  transition: opacity .2s ease;
-}
-.btn-shine:hover::after{
-  opacity: 1;
-  animation: btnSweep .9s ease-out;
-}
-@keyframes btnSweep { to { left: 140%; } }
+/* Utility */
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* ========== Stat glow pulse when count finishes ========== */
-@keyframes borderPulse {
-  0% { box-shadow: 0 0 0 rgba(56,189,248,0); border-color: rgba(56,189,248,.25); }
-  50% { box-shadow: 0 8px 32px rgba(56,189,248,.35); border-color: rgba(56,189,248,.6); }
-  100% { box-shadow: 0 0 0 rgba(56,189,248,0); border-color: rgba(255,255,255,.1); }
+/* ========== Header / Nav ========== */
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10,10,10,.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1f2937;
 }
-.pop-glow{
-  animation: borderPulse 1.2s ease-out 1;
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px;
+  max-width: 1120px; margin: 0 auto;
 }
+.logo img { height: 40px; width: auto; }
 
-/* ==== Hero parallax (video moves slightly slower than scroll) ==== */
-@media (min-width: 768px){
-  #home .parallax-media{ will-change: transform; transform: translateY(0) scale(1.08); }
+.nav-links {
+  display: flex; gap: 18px; align-items: center; list-style: none; padding: 0; margin: 0;
 }
+.nav-links a { font-size: 14px; color: #cbd5e1; }
+.nav-links a:hover { color: #38bdf8; }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  #home .parallax-media{ transform: none !important; }
-}
-
-/* ==== About card "icon motion" via :before (no HTML edits) ==== */
-#about .p-6.rounded-2xl h3{ position: relative; padding-left: 34px; }
-#about .p-6.rounded-2xl h3::before{
-  content: "🔧"; /* default */
-  position: absolute; left: 0; top: 0.1em;
-  font-size: 22px; opacity: .9;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
-  animation: floatY 4s ease-in-out infinite;
-}
-/* Assign specific icons per card using nth-child */
-#about .p-6.rounded-2xl:nth-of-type(1) h3::before{ content: "🧩"; } /* What makes us different? */
-#about .p-6.rounded-2xl:nth-of-type(2) h3::before{ content: "📍"; } /* Service Regions */
-
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-/* Sticky bottom CTA — mobile only */
-@media (max-width: 767.98px){
-  .sticky-cta {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 60;
-    background: rgba(12,12,12,.92);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(120,120,120,.25);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    padding: 10px 12px env(safe-area-inset-bottom);
+/* Mobile horizontal scroll for nav links */
+@media (max-width: 768px) {
+  .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 14px;
   }
-  body { padding-bottom: 70px; } /* avoid content underlap */
+  .nav-links::-webkit-scrollbar { display: none; }
 }
-.sticky-cta a {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; font-weight: 600; text-decoration: none;
-  padding: 12px; border-radius: 12px;
-}
-.sticky-cta .cta-primary { background:#38bdf8; color:#0b0b0b; }
-.sticky-cta .cta-secondary { border:1px solid #a3a3a3; color:#e5e5e5; }
 
-/* Floating Action Button (contact dock) */
-.fab-dock{
-  position: fixed; right: 16px; bottom: 88px; z-index: 60;
+/* ========== Hero Section with Video ========== */
+.hero {
+  position: relative; min-height: 70vh; overflow: hidden;
+}
+.hero video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.55);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 1120px; margin: 0 auto; padding: 96px 16px 48px;
+}
+.hero-content h1 {
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(28px, 6vw, 56px);
+}
+.hero-content p {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: clamp(16px, 2.4vw, 20px);
+  max-width: 720px;
+}
+.cta-buttons {
+  margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;
+}
+.btn-primary {
+  background: #38bdf8; color: #0a0a0a; font-weight: 700;
+  padding: 12px 18px; border-radius: 12px;
+}
+.btn-primary:hover { background: #7dd3fc; }
+.btn-secondary {
+  border: 1px solid #e5e7eb; color: #f8fafc;
+  padding: 12px 18px; border-radius: 12px;
+}
+.btn-secondary:hover { border-color: #cbd5e1; }
+
+.delivery-note { margin-top: 10px; color: #d1d5db; }
+
+/* ========== Floating Action Buttons (WhatsApp / Call) ========== */
+.fab-container {
+  position: fixed; right: 16px; bottom: 16px; z-index: 60;
   display: flex; flex-direction: column; gap: 10px;
 }
-.fab-dock a{
+.fab-container a {
   width: 48px; height: 48px; border-radius: 50%;
-  display: grid; place-items: center; text-decoration: none;
-  background: #0f172a; border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 24px rgba(0,0,0,.35);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(15,15,15,.8);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
 }
-.fab-dock a:hover{ transform: translateY(-2px); border-color: rgba(56,189,248,.45); box-shadow: 0 16px 36px rgba(56,189,248,.25); }
-.fab-wa { color:#25D366; }      /* WhatsApp */
-.fab-call { color:#38bdf8; }     /* Call */
-.fab-ig { color:#e1306c; }       /* Instagram */
-
-/* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .fab-dock a:hover{ transform:none; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.fab-container img {
+  width: 26px; height: 26px;
 }
 
-/* Branded FAB backgrounds and white icons */
-.fab-dock a{ border: none; }
-.fab-wa { background:#25D366; color:#fff; }
-.fab-call { background:#0ea5e9; color:#fff; }
-.fab-ig { 
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  color:#fff;
+/* Smaller FABs on small devices */
+@media (max-width: 360px) {
+  .fab-container a { width: 42px; height: 42px; }
+  .fab-container img { width: 22px; height: 22px; }
 }
-.fab-dock svg{ width:24px; height:24px; display:block; }
-
-/* Enhanced hover for FABs: soft glow + gentle scale */
-.fab-dock a{
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-.fab-dock a:hover{
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 16px 42px rgba(56,189,248,.25);
-  filter: saturate(1.05);
-}
-.fab-dock a:active{
-  transform: scale(0.96);
-}
-/* Keep icons crisp */
-.fab-dock svg{ width: 24px; height: 24px; }
-
-/* Typed text effect in hero */
-.typed-text { border-right: 2px solid #38bdf8; white-space: nowrap; overflow: hidden; display: inline-block; }
-@keyframes blinkCursor { 0%, 50% { border-color: #38bdf8; } 51%, 100% { border-color: transparent; } }
-.typed-text { animation: blinkCursor .8s step-end infinite; }
-
-/* Process timeline */
-.process-timeline { position: relative; }
-.process-step { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.process-step.visible { opacity: 1; transform: translateY(0); }
-.process-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; background: #38bdf8; top: 0; bottom: 0; }
-.process-item { position: relative; width: 50%; padding: 20px; }
-.process-item:nth-child(odd) { left: 0; text-align: right; }
-.process-item:nth-child(even) { left: 50%; }
-.process-marker { width: 16px; height: 16px; background: #38bdf8; border-radius: 50%; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); }
-@media (max-width: 768px) {
-  .process-line { left: 8px; transform: none; }
-  .process-item, .process-item:nth-child(even) { left: 0; width: 100%; text-align: left; padding-left: 32px; }
-  .process-marker { left: 8px; transform: none; }
-}
-
-@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-    @keyframes fadeInUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
