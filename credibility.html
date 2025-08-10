@@ -21,25 +21,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
   <link rel="icon" href="assets/favicon.ico?v=2">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
-  <link rel="stylesheet" href="assets/styles.css?v=1"/>
 
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
   </style>
 
-  <script>
-    // Mobile nav toggle (locks page scroll while menu is open)
-    function toggleNav(){
-      const m = document.getElementById('mobileNav');
-      const nowHidden = m.classList.toggle('hidden');
-      const open = !nowHidden;
-      document.documentElement.classList.toggle('overflow-hidden', open);
-      document.body.classList.toggle('overflow-hidden', open);
-    }
-  </script>
+  <!-- (No mobile dropdown JS on purpose) -->
 
   <script type="application/ld+json">
   {
@@ -61,7 +49,7 @@
 </head>
 
 <body class="bg-neutral-950 text-neutral-100">
-  <!-- Header -->
+  <!-- Header: desktop nav; mobile shows only the hamburger (no dropdown) -->
   <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-4">
@@ -69,7 +57,7 @@
           <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
         </a>
 
-        <!-- Desktop nav -->
+        <!-- Desktop nav only -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="index.html" class="hover:text-sky-400">Home</a>
           <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
@@ -83,30 +71,13 @@
           <a href="contact.html" class="hover:text-sky-400">Contact</a>
         </nav>
 
-        <!-- Hamburger (mobile) -->
-        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
-                aria-label="Toggle navigation" onclick="toggleNav()">
+        <!-- Mobile: icon only (does nothing by design) -->
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200" aria-label="Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
             <path d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
-    </div>
-
-    <!-- Mobile menu panel -->
-    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
-      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
-        <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
-        <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
-        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
-        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
-        <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
-        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
-        <a href="credibility.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Credibility</a>
-        <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
-        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
-      </nav>
     </div>
   </header>
 
@@ -143,13 +114,12 @@
       </div>
     </section>
 
-    <!-- Proof gallery (images + vertical video) -->
+    <!-- Proof gallery -->
     <section id="proofs" class="py-16">
       <div class="mx-auto max-w-7xl px-4">
         <h3 class="text-xl md:text-2xl font-semibold mb-4">Recent handovers.</h3>
 
         <div class="grid gap-6 md:grid-cols-4">
-          <!-- Left: 3x2 images -->
           <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <figure class="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/40">
               <img src="assets/proof1.png" alt="Site proof 1" loading="lazy" class="w-full h-56 md:h-44 object-cover">
@@ -171,25 +141,16 @@
             </figure>
           </div>
 
-          <!-- Right: vertical video -->
           <aside class="md:col-span-1">
             <div class="md:sticky md:top-24 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/40">
-              <video
-                src="assets/proof4.mp4"
-                playsinline
-                controls
-                muted
-                loop
-                class="block w-full"
-                style="aspect-ratio: 9/16; object-fit: cover;"
-              ></video>
+              <video src="assets/proof4.mp4" playsinline controls muted loop class="block w-full" style="aspect-ratio:9/16;object-fit:cover;"></video>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- Clients & Partners strip -->
+    <!-- Clients & Partners -->
     <section id="clients" class="py-16 border-t border-neutral-800 bg-neutral-900/40">
       <div class="mx-auto max-w-7xl px-4">
         <h2 class="text-3xl md:text-4xl font-bold mb-8">Clients &amp; Partners</h2>
@@ -237,13 +198,13 @@
     function animateCount(el) {
       const targetAttr = el.getAttribute('data-target');
       const suffix = el.getAttribute('data-suffix') || "";
-      theDuration = +(el.getAttribute('data-duration') || 1200);
+      const duration = +(el.getAttribute('data-duration') || 1200);
       const start = +(el.getAttribute('data-start') || 0);
       const target = +targetAttr;
       if (isNaN(target)) return;
       const t0 = performance.now();
       function tick(now) {
-        const p = Math.min(1, (now - t0) / theDuration);
+        const p = Math.min(1, (now - t0) / duration);
         const val = Math.round(start + (target - start) * easeOut(p));
         el.textContent = fmt(val) + suffix;
         if (p < 1) requestAnimationFrame(tick);
