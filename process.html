@@ -1,210 +1,255 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
-<meta content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash &amp; detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka." name="description"/>
-<meta content="Autostralis" name="author"/>
-<meta content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure" property="og:title"/>
-<meta content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://www.autostralis.com" property="og:url"/>
-<meta content="https://www.autostralis.com/og-image.jpg" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
+  <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
+  <meta name="author" content="Autostralis"/>
+  <meta property="og:title" content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure"/>
+  <meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.autostralis.com"/>
+  <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" href="assets/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+
+  <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
-  </style>
-<script>
-    // Mobile nav toggle
-    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Autostralis",
-    "url": "https://www.autostralis.com",
-    "logo": "https://www.autostralis.com/logo.png",
-    "sameAs": [],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9388666777",
-      "contactType": "customer service",
-      "email": "contact@autostralis.com"
-    }],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Mangalathu Group"
+
+    /* === Process timeline styles === */
+    :root{ --sky:#38bdf8; --border:rgba(120,120,120,.25); }
+    #process-wrap{ position: relative; }
+
+    @media (min-width: 768px){
+      .proc-line{ position:absolute; left:50%; top:0; bottom:0; width:2px; transform: translateX(-50%); background: linear-gradient(var(--sky), rgba(56,189,248,.15)); opacity:.7; }
     }
-  }
+
+    .proc-list{ position:relative; display:grid; gap:18px; }
+    @media (min-width: 768px){ .proc-list{ grid-template-columns: 1fr 1fr; } }
+
+    .proc-step{
+      position:relative; background: rgba(255,255,255,.03); border:1px solid var(--border);
+      border-radius:16px; padding:16px 16px 14px; overflow:hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      opacity:0; transform: translateY(14px);
+    }
+    .proc-step.is-visible{ opacity:1; transform: translateY(0); }
+    .proc-step:hover{ transform: translateY(-6px); border-color: rgba(56,189,248,.45); box-shadow: 0 14px 36px rgba(56,189,248,.2); }
+
+    .proc-step::before{
+      content:""; position:absolute; inset:0; padding:1px; border-radius:16px;
+      background: linear-gradient(120deg, var(--sky), #0ea5e9, var(--sky));
+      background-size:200% 200%; opacity:0; pointer-events:none;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      transition: opacity .25s ease;
+    }
+    .proc-step:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
+    @keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
+
+    .proc-top{ display:flex; align-items:center; gap:10px; }
+    .proc-num{ width:36px; height:36px; border-radius:10px; display:grid; place-items:center; font-weight:800; color:#0b0b0b; background: var(--sky); box-shadow: 0 6px 18px rgba(56,189,248,.35); }
+    .proc-icon{ font-size:20px; line-height:1; }
+    .proc-title{ font-weight:700; font-size:1.1rem; }
+
+    .proc-body ul{ margin:.5rem 0 0; padding-left:1.1rem; }
+    .proc-body li{ color:#d4d4d4; margin:.25rem 0; opacity:0; transform: translateY(6px); }
+    .proc-step.is-visible .proc-body li{ animation: fadeUp .45s ease forwards; }
+    .proc-step.is-visible .proc-body li:nth-child(1){ animation-delay:.05s; }
+    .proc-step.is-visible .proc-body li:nth-child(2){ animation-delay:.12s; }
+    .proc-step.is-visible .proc-body li:nth-child(3){ animation-delay:.18s; }
+    .proc-step.is-visible .proc-body li:nth-child(4){ animation-delay:.24s; }
+    .proc-step.is-visible .proc-body li:nth-child(5){ animation-delay:.30s; }
+    @keyframes fadeUp { from{opacity:0; transform: translateY(6px);} to{opacity:1; transform:none;} }
+
+    @media (min-width: 768px){
+      .dot{ position:absolute; top:18px; width:12px; height:12px; border-radius:9999px; background: var(--sky); box-shadow: 0 0 0 6px rgba(56,189,248,.18); }
+      .proc-step:nth-child(odd) .dot{ right:-28px; }
+      .proc-step:nth-child(even) .dot{ left:-28px; }
+    }
+
+    .proc-step .shine{ content:""; position:absolute; top:0; left:-70%; width:45%; height:100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); opacity:0; }
+    .proc-step.pop .shine{ opacity:1; animation: shineSweep .9s ease-out forwards; }
+    @keyframes shineSweep { to { left: 130%; } }
+
+    @media (max-width: 767.98px){
+      .proc-scroller{ display:flex; gap:12px; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; }
+      .proc-step{ min-width: 80%; scroll-snap-align:start; }
+    }
+
+    .proc-intro{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 1.5rem; } /* extra space */
+    .proc-chip{ padding:6px 10px; border-radius:9999px; border:1px solid var(--border); background: rgba(255,255,255,.03); color:#e5e5e5; font-size:.85rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Autostralis","url":"https://www.autostralis.com","logo":"https://www.autostralis.com/logo.png","sameAs":[],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-9388666777","contactType":"customer service","email":"contact@autostralis.com"}],"parentOrganization":{"@type":"Organization","name":"Mangalathu Group"}}
   </script>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
-<style>
-/* === Process: premium alternating timeline (md+) + horizontal stepper (mobile) === */
-:root{
-  --sky:#38bdf8;
-  --border:rgba(120,120,120,.25);
-}
-#process-wrap{ position: relative; }
+</head>
 
-/* central line for desktop timeline */
-@media (min-width: 768px){
-  .proc-line{
-    position:absolute; left:50%; top:0; bottom:0; width:2px;
-    transform: translateX(-50%);
-    background: linear-gradient(var(--sky), rgba(56,189,248,.15));
-    opacity:.7;
-  }
-}
-
-/* container that holds items */
-.proc-list{ position:relative; display:grid; gap:18px; }
-
-/* alternating grid for md+ */
-@media (min-width: 768px){
-  .proc-list{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* step item */
-.proc-step{
-  position:relative;
-  background: rgba(255,255,255,.03);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:16px 16px 14px 16px;
-  overflow:hidden;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  opacity:0; transform: translateY(14px);
-}
-.proc-step.is-visible{ opacity:1; transform: translateY(0); }
-.proc-step:hover{
-  transform: translateY(-6px);
-  border-color: rgba(56,189,248,.45);
-  box-shadow: 0 14px 36px rgba(56,189,248,.2);
-}
-
-/* gradient border sweep */
-.proc-step::before{
-  content:"";
-  position:absolute; inset:0; padding:1px; border-radius:16px;
-  background: linear-gradient(120deg, var(--sky), #0ea5e9, var(--sky));
-  background-size:200% 200%;
-  opacity:0; transition:opacity .25s ease; pointer-events:none;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-}
-.proc-step:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
-@keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
-
-/* badge + number + icon row */
-.proc-top{ display:flex; align-items:center; gap:10px; }
-.proc-num{
-  width:36px; height:36px; border-radius:10px;
-  display:grid; place-items:center; font-weight:800;
-  color:#0b0b0b; background: var(--sky); box-shadow: 0 6px 18px rgba(56,189,248,.35);
-}
-.proc-icon{ font-size:20px; line-height:1; }
-.proc-title{ font-weight:700; font-size:1.1rem; }
-
-/* bullets with cascade */
-.proc-body ul{ margin:.5rem 0 0; padding-left:1.1rem; }
-.proc-body li{ color:#d4d4d4; margin:.25rem 0; opacity:0; transform: translateY(6px); }
-.proc-step.is-visible .proc-body li{ animation: fadeUp .45s ease forwards; }
-.proc-step.is-visible .proc-body li:nth-child(1){ animation-delay:.05s; }
-.proc-step.is-visible .proc-body li:nth-child(2){ animation-delay:.12s; }
-.proc-step.is-visible .proc-body li:nth-child(3){ animation-delay:.18s; }
-.proc-step.is-visible .proc-body li:nth-child(4){ animation-delay:.24s; }
-.proc-step.is-visible .proc-body li:nth-child(5){ animation-delay:.30s; }
-@keyframes fadeUp { from{opacity:0; transform: translateY(6px);} to{opacity:1; transform:none;} }
-
-/* connector dots near center line for md+ */
-@media (min-width: 768px){
-  .dot{
-    position:absolute; top:18px; width:12px; height:12px; border-radius:9999px;
-    background: var(--sky); box-shadow: 0 0 0 6px rgba(56,189,248,.18);
-  }
-  .proc-step:nth-child(odd) .dot{ right:-28px; }
-  .proc-step:nth-child(even) .dot{ left:-28px; }
-}
-
-/* shine gloss sweep */
-.proc-step .shine{
-  content:""; position:absolute; top:0; left:-70%; width:45%; height:100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%,
-                                     rgba(255,255,255,.55) 50%,
-                                     rgba(255,255,255,0) 100%);
-  transform: skewX(-18deg);
-  opacity:0;
-}
-.proc-step.pop .shine{ opacity:1; animation: shineSweep .9s ease-out forwards; }
-@keyframes shineSweep { to { left: 130%; } }
-
-/* mobile: horizontal stepper */
-@media (max-width: 767.98px){
-  .proc-scroller{ display:flex; gap:12px; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; }
-  .proc-step{ min-width: 80%; scroll-snap-align:start; }
-}
-
-/* top intro */
-.proc-intro{
-  display:flex; flex-wrap:wrap; gap:8px;
-}
-.proc-chip{
-  padding:6px 10px; border-radius:9999px; border:1px solid var(--border);
-  background: rgba(255,255,255,.03); color:#e5e5e5; font-size:.85rem;
-}
-</style></head>
 <title>Process – Autostralis</title>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
 
 <body class="bg-neutral-950 text-neutral-100">
-<header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-<div class="mx-auto max-w-7xl px-4">
-<div class="flex items-center justify-between py-4">
-<a class="flex items-center gap-3" href="index.html"><img alt="Autostralis Logo" src="assets/logo.png" style="height:40px; width:auto; display:block;"/></a>
-<nav class="hidden md:flex items-center gap-6 text-sm">
-<a class="hover:text-sky-400" href="index.html">Home</a>
-<a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a>
-<a class="hover:text-sky-400" href="founder.html">Founder</a>
-<a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a>
-<a class="hover:text-sky-400" href="investors.html">For Investors</a>
-<a class="hover:text-sky-400 font-semibold text-sky-400" href="process.html">Process</a>
-<a class="hover:text-sky-400" href="credibility.html">Credibility</a>
-<a class="hover:text-sky-400" href="case-studies.html">Case Studies</a>
-<a class="hover:text-sky-400" href="faqs.html">FAQs</a>
-<a class="hover:text-sky-400" href="contact.html">Contact</a>
-</nav>
-</div>
-</div>
-</header>
-<main>
-<section class="py-20" id="process">
-<div class="mx-auto max-w-7xl px-4">
-<h2 class="text-3xl md:text-4xl font-bold">How We Work — Step by Step</h2>
 
-<div class="proc-intro mt-4"><div class="proc-chip">Turnkey • A–Z</div><div class="proc-chip">OEM‑Aligned Pits &amp; Slopes</div><div class="proc-chip">BIS Electrical Safety</div><div class="proc-chip">Water Recycling Ready</div><div class="proc-chip">30–45 Day Launch</div></div><div id="process-wrap"><div class="proc-line"></div><div class="proc-list"><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="1">0</div><div class="proc-icon">🤝</div><div class="proc-title">1) Client Consultation</div></div><div class="proc-body"><ul><li>Understand goals, budget, brand requirements</li><li>Assess site photos, measurements, and constraints</li><li>Define success metrics and launch date</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="2">0</div><div class="proc-icon">📋</div><div class="proc-title">2) Site Feasibility &amp; Approvals</div></div><div class="proc-body"><ul><li>Check access, utilities, floor load &amp; zoning</li><li>Liaison support for local approvals (as needed)</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="3">0</div><div class="proc-icon">🧭</div><div class="proc-title">3) Concept Design &amp; 3D Planning</div></div><div class="proc-body"><ul><li>Workflow‑first layouts for bays &amp; circulation</li><li>Pit drawings, drainage plan, electrical points</li><li>Optional 3D renders for stakeholder approvals</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="4">0</div><div class="proc-icon">🏗️</div><div class="proc-title">4) Civil Construction</div></div><div class="proc-body"><ul><li>Pit excavation &amp; RCC with correct slopes</li><li>Anti‑slip, chemical‑resistant flooring</li><li>Structural changes for BOH &amp; customer areas</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="5">0</div><div class="proc-icon">⚡</div><div class="proc-title">5) MEP &amp; Drainage Setup</div></div><div class="proc-body"><ul><li>Water supply &amp; return, oil trap &amp; recycling lines</li><li>Electrical panels, protection, and lighting design</li><li>Tested gradients for efficient outflow</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="6">0</div><div class="proc-icon">🛠️</div><div class="proc-title">6) Equipment Integration</div></div><div class="proc-body"><ul><li>Install &amp; align wash, steam, vacuum, air systems</li><li>Controls &amp; automation connections</li><li>Live testing for max efficiency</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="7">0</div><div class="proc-icon">🎯</div><div class="proc-title">7) Interior Finishing &amp; Branding</div></div><div class="proc-body"><ul><li>Washable wall claddings and practical finishes</li><li>Task lighting for detailing bays</li><li>Signage, decals, and brand experience</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="8">0</div><div class="proc-icon">✅</div><div class="proc-title">8) Testing &amp; Quality Checks</div></div><div class="proc-body"><ul><li>Water‑flow &amp; leak tests</li><li>Electrical safety &amp; load tests</li><li>Handover snag‑free checklist</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="9">0</div><div class="proc-icon">📘</div><div class="proc-title">9) Staff Training &amp; Handover</div></div><div class="proc-body"><ul><li>Machine operations, safety SOPs</li><li>Customer flow &amp; service playbook</li><li>Maintenance routines &amp; daily checks</li></ul></div></div><div class="proc-step"><div class="shine"></div><div class="dot"></div><div class="proc-top"><div class="proc-num" data-count="10">0</div><div class="proc-icon">🛟</div><div class="proc-title">10) Post‑Completion Support</div></div><div class="proc-body"><ul><li>On‑call assistance and periodic inspections</li><li>Upgrades &amp; expansion support</li><li>Warranty coordination where applicable</li></ul></div></div></div></div></div>
-</section>
+<!-- Hamburger toggle (shared) -->
+<script>
+  function toggleNav(){
+    const m = document.getElementById('mobileNav');
+    const nowHidden = m.classList.toggle('hidden');
+    const open = !nowHidden;
+    document.documentElement.classList.toggle('overflow-hidden', open);
+    document.body.classList.toggle('overflow-hidden', open);
+  }
+</script>
+
+<header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-sky-400">Home</a>
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+        <a href="founder.html" class="hover:text-sky-400">Founder</a>
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+        <a href="process.html" class="hover:text-sky-400 font-semibold text-sky-400">Process</a>
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
+
+      <!-- Hamburger -->
+      <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
+              aria-label="Toggle navigation" onclick="toggleNav()">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
+    <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+      <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
+      <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
+      <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
+      <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
+      <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
+      <a href="process.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Process</a>
+      <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
+      <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
+      <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
+      <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="process" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">How We Work — Step by Step</h2>
+
+      <div class="proc-intro mt-4">
+        <div class="proc-chip">Turnkey • A–Z</div>
+        <div class="proc-chip">OEM‑Aligned Pits &amp; Slopes</div>
+        <div class="proc-chip">BIS Electrical Safety</div>
+        <div class="proc-chip">Water Recycling Ready</div>
+        <div class="proc-chip">30–45 Day Launch</div>
+      </div>
+
+      <div id="process-wrap">
+        <div class="proc-line"></div>
+
+        <div class="proc-list">
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="1">0</div><div class="proc-icon">🤝</div><div class="proc-title">1) Client Consultation</div></div>
+            <div class="proc-body"><ul><li>Understand goals, budget, brand requirements</li><li>Assess site photos, measurements, and constraints</li><li>Define success metrics and launch date</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="2">0</div><div class="proc-icon">📋</div><div class="proc-title">2) Site Feasibility &amp; Approvals</div></div>
+            <div class="proc-body"><ul><li>Check access, utilities, floor load &amp; zoning</li><li>Liaison support for local approvals (as needed)</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="3">0</div><div class="proc-icon">🧭</div><div class="proc-title">3) Concept Design &amp; 3D Planning</div></div>
+            <div class="proc-body"><ul><li>Workflow‑first layouts for bays &amp; circulation</li><li>Pit drawings, drainage plan, electrical points</li><li>Optional 3D renders for stakeholder approvals</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="4">0</div><div class="proc-icon">🏗️</div><div class="proc-title">4) Civil Construction</div></div>
+            <div class="proc-body"><ul><li>Pit excavation &amp; RCC with correct slopes</li><li>Anti‑slip, chemical‑resistant flooring</li><li>Structural changes for BOH &amp; customer areas</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="5">0</div><div class="proc-icon">⚡</div><div class="proc-title">5) MEP &amp; Drainage Setup</div></div>
+            <div class="proc-body"><ul><li>Water supply &amp; return, oil trap &amp; recycling lines</li><li>Electrical panels, protection, and lighting design</li><li>Tested gradients for efficient outflow</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="6">0</div><div class="proc-icon">🛠️</div><div class="proc-title">6) Equipment Integration</div></div>
+            <div class="proc-body"><ul><li>Install &amp; align wash, steam, vacuum, air systems</li><li>Controls &amp; automation connections</li><li>Live testing for max efficiency</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="7">0</div><div class="proc-icon">🎯</div><div class="proc-title">7) Interior Finishing &amp; Branding</div></div>
+            <div class="proc-body"><ul><li>Washable wall claddings and practical finishes</li><li>Task lighting for detailing bays</li><li>Signage, decals, and brand experience</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="8">0</div><div class="proc-icon">✅</div><div class="proc-title">8) Testing &amp; Quality Checks</div></div>
+            <div class="proc-body"><ul><li>Water‑flow &amp; leak tests</li><li>Electrical safety &amp; load tests</li><li>Handover snag‑free checklist</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="9">0</div><div class="proc-icon">📘</div><div class="proc-title">9) Staff Training &amp; Handover</div></div>
+            <div class="proc-body"><ul><li>Machine operations, safety SOPs</li><li>Customer flow &amp; service playbook</li><li>Maintenance routines &amp; daily checks</li></ul></div>
+          </div>
+
+          <div class="proc-step"><div class="shine"></div><div class="dot"></div>
+            <div class="proc-top"><div class="proc-num" data-count="10">0</div><div class="proc-icon">🛟</div><div class="proc-title">10) Post‑Completion Support</div></div>
+            <div class="proc-body"><ul><li>On‑call assistance and periodic inspections</li><li>Upgrades &amp; expansion support</li><li>Warranty coordination where applicable</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </main>
+
 <footer class="py-10 border-t border-neutral-800 mt-12">
-<div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-<p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
-<nav class="text-sm flex flex-wrap gap-3 text-neutral-400"><a class="hover:text-sky-400" href="index.html">Home</a> • <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> • <a class="hover:text-sky-400" href="founder.html">Founder</a> • <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> • <a class="hover:text-sky-400" href="investors.html">For Investors</a> • <a class="hover:text-sky-400" href="process.html">Process</a> • <a class="hover:text-sky-400" href="credibility.html">Credibility</a> • <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> • <a class="hover:text-sky-400" href="faqs.html">FAQs</a> • <a class="hover:text-sky-400" href="contact.html">Contact</a></nav>
-</div>
+  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+    <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+      <a class="hover:text-sky-400" href="index.html">Home</a> •
+      <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> •
+      <a class="hover:text-sky-400" href="founder.html">Founder</a> •
+      <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> •
+      <a class="hover:text-sky-400" href="investors.html">For Investors</a> •
+      <a class="hover:text-sky-400" href="process.html">Process</a> •
+      <a class="hover:text-sky-400" href="credibility.html">Credibility</a> •
+      <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> •
+      <a class="hover:text-sky-400" href="faqs.html">FAQs</a> •
+      <a class="hover:text-sky-400" href="contact.html">Contact</a>
+    </nav>
+  </div>
 </footer>
+
 <script>
 (() => {
   const easeOut = t => 1 - Math.pow(1 - t, 3);
@@ -221,7 +266,7 @@
 
   const items = document.querySelectorAll('.proc-step');
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach((e, idx)=>{
+    entries.forEach((e)=>{
       if(e.isIntersecting){
         const card = e.target;
         card.classList.add('is-visible','pop');
@@ -231,7 +276,6 @@
           num.dataset.done = "1";
           setTimeout(()=> countTo(num, target), 120);
         }
-        // remove pop (shine) after run
         setTimeout(()=> card.classList.remove('pop'), 1100);
         io.unobserve(card);
       }
@@ -240,5 +284,7 @@
 
   items.forEach(el => io.observe(el));
 })();
-</script></body>
+</script>
+
+</body>
 </html>
