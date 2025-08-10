@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
+<meta content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash &amp; detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka." name="description"/>
+<meta content="Autostralis" name="author"/>
+<meta content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure" property="og:title"/>
+<meta content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.autostralis.com" property="og:url"/>
+<meta content="https://www.autostralis.com/og-image.jpg" property="og:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
+    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+  </style>
+<script>
+    // Mobile nav toggle
+    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Autostralis",
+    "url": "https://www.autostralis.com",
+    "logo": "https://www.autostralis.com/logo.png",
+    "sameAs": [],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-9388666777",
+      "contactType": "customer service",
+      "email": "contact@autostralis.com"
+    }],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Mangalathu Group"
+    }
+  }
+  </script>
+<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/favicon.ico?v=2" rel="icon"/>
+<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<style>
+/* ===== Horizontal Infographic Flow (desktop) / Vertical (mobile) ===== */
+:root{ --sky:#38bdf8; --mut:#262626; --card:rgba(255,255,255,.03); --bd:rgba(120,120,120,.25); }
+#hflow{ position: relative; }
+
+/* Canvas line (SVG) wrapper */
+.hflow-track{
+  position: relative;
+  margin-top: 28px;
+  padding: 30px 0 10px;
+}
+.hflow-svg{
+  position:absolute; inset:0 0 0 0; pointer-events:none;
+}
+.hflow-progress{
+  stroke: var(--sky);
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 10px rgba(56,189,248,.35));
+}
+
+/* Steps grid (desktop horizontal) */
+.hflow-steps{
+  display:grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  gap: 26px; align-items: start;
+}
+.hflow-step{
+  position: relative; z-index:1;
+  background: var(--card);
+  border:1px solid var(--bd);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  min-height: 140px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  opacity:0; transform: translateY(12px);
+}
+.hflow-step.is-visible{ opacity:1; transform:none; }
+.hflow-step:hover{ transform: translateY(-6px); border-color: rgba(56,189,248,.45); box-shadow: 0 16px 36px rgba(56,189,248,.25); }
+
+.hflow-num{
+  width:36px; height:36px; border-radius: 10px;
+  display:grid; place-items:center; font-weight:800;
+  color:#0b0b0b; background: var(--sky);
+  box-shadow: 0 6px 18px rgba(56,189,248,.35); margin-bottom: 8px;
+}
+.hflow-title{ font-weight: 700; margin-bottom: 6px; }
+.hflow-step ul{ margin: 6px 0 0 1rem; }
+.hflow-step li{ color:#d4d4d4; margin:.25rem 0; }
+
+/* Dots that sit on the path */
+.hflow-dot{
+  position:absolute; top:-14px; left:50%; transform: translateX(-50%);
+  width:12px; height:12px; border-radius:9999px; background: var(--sky);
+  box-shadow:0 0 0 6px rgba(56,189,248,.18);
+  animation: pulse 2.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow:0 0 0 6px rgba(56,189,248,.18); }
+  50% { box-shadow:0 0 0 10px rgba(56,189,248,.35); }
+}
+
+/* Mobile: vertical list with left rail */
+@media (max-width: 900px){
+  .hflow-track{ padding-top: 8px; }
+  .hflow-steps{
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+  }
+  .hflow-svg{ display:none; }
+  .hflow-rail{
+    position:absolute; left:10px; top:0; bottom:0; width:2px; background: linear-gradient(#3b82f6, transparent);
+    opacity:.6;
+  }
+  .hflow-step{ padding-left: 38px; }
+  .hflow-dot{ left: 10px; transform: translateX(-50%); top: 14px; }
+}
+
+/* Shine sweep on hover */
+.hflow-step::before{
+  content:""; position:absolute; inset:0; padding:1px; border-radius:16px;
+  background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
+  background-size:200% 200%;
+  opacity:0; transition:opacity .25s ease; pointer-events:none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.hflow-step:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
+@keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
+</style></head>
+<title>Process – Autostralis</title>
+<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/favicon.ico?v=2" rel="icon"/>
+<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+
+<body class="bg-neutral-950 text-neutral-100">
+<header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+<div class="mx-auto max-w-7xl px-4">
+<div class="flex items-center justify-between py-4">
+<a class="flex items-center gap-3" href="index.html"><img alt="Autostralis Logo" src="assets/logo.png" style="height:40px; width:auto; display:block;"/></a>
+<nav class="hidden md:flex items-center gap-6 text-sm">
+<a class="hover:text-sky-400" href="index.html">Home</a>
+<a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a>
+<a class="hover:text-sky-400" href="founder.html">Founder</a>
+<a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a>
+<a class="hover:text-sky-400" href="investors.html">For Investors</a>
+<a class="hover:text-sky-400 font-semibold text-sky-400" href="process.html">Process</a>
+<a class="hover:text-sky-400" href="credibility.html">Credibility</a>
+<a class="hover:text-sky-400" href="case-studies.html">Case Studies</a>
+<a class="hover:text-sky-400" href="faqs.html">FAQs</a>
+<a class="hover:text-sky-400" href="contact.html">Contact</a>
+</nav>
+</div>
+</div>
+</header>
+<main>
+<section class="py-20" id="process">
+<div class="mx-auto max-w-7xl px-4">
+<h2 class="text-3xl md:text-4xl font-bold">How We Work — Horizontal Flow</h2>
+
+<div class="hflow-track"><div class="hflow-rail"></div><div class="hflow-steps"><div class="hflow-step"><div class="hflow-num">1</div><div class="hflow-title">Client Consultation</div><ul><li>Goals, scope, brand brief</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">2</div><div class="hflow-title">Site Feasibility &amp; Approvals</div><ul><li>Access, utilities, permissions</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">3</div><div class="hflow-title">Concept Design &amp; 3D Planning</div><ul><li>Layouts, pits, drainage, 3D</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">4</div><div class="hflow-title">Civil Construction</div><ul><li>Excavation, RCC, flooring</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">5</div><div class="hflow-title">MEP &amp; Drainage Setup</div><ul><li>Water, power, slopes</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">6</div><div class="hflow-title">Equipment Integration</div><ul><li>Install &amp; align systems</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">7</div><div class="hflow-title">Interior Finishing &amp; Branding</div><ul><li>Lighting, finishes, signage</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">8</div><div class="hflow-title">Testing &amp; Quality Checks</div><ul><li>Flow, safety, load tests</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">9</div><div class="hflow-title">Staff Training &amp; Handover</div><ul><li>Ops, SOPs, maintenance</li></ul><div class="hflow-dot"></div></div><div class="hflow-step"><div class="hflow-num">10</div><div class="hflow-title">Post‑Completion Support</div><ul><li>On‑call + inspections</li></ul><div class="hflow-dot"></div></div></div><svg class="hflow-svg" preserveAspectRatio="none" viewBox="0 0 1200 240"><path d="M 20 140 C 200 60, 400 220, 600 140 S 1000 60, 1180 140" fill="none" opacity="0.4" stroke="#1f2937" stroke-width="3"></path><path class="hflow-progress" d="M 20 140 C 200 60, 400 220, 600 140 S 1000 60, 1180 140" fill="none" stroke-dasharray="1200" stroke-dashoffset="1200"></path></svg></div></div>
+</section>
+</main>
+<footer class="py-10 border-t border-neutral-800 mt-12">
+<div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+<nav class="text-sm flex flex-wrap gap-3 text-neutral-400"><a class="hover:text-sky-400" href="index.html">Home</a> • <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> • <a class="hover:text-sky-400" href="founder.html">Founder</a> • <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> • <a class="hover:text-sky-400" href="investors.html">For Investors</a> • <a class="hover:text-sky-400" href="process.html">Process</a> • <a class="hover:text-sky-400" href="credibility.html">Credibility</a> • <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> • <a class="hover:text-sky-400" href="faqs.html">FAQs</a> • <a class="hover:text-sky-400" href="contact.html">Contact</a></nav>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const steps = document.querySelectorAll('.hflow-step');
+  const prog = document.querySelector('.hflow-progress');
+  const revealIO = new IntersectionObserver((entries)=>{
+    entries.forEach((e, i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=> e.target.classList.add('is-visible'), i*80);
+        revealIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  steps.forEach(s=> revealIO.observe(s));
+
+  // Animate the progress line when the track is visible
+  const track = document.querySelector('.hflow-track');
+  if(prog && track){
+    const lineIO = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          // animate stroke-dashoffset from full to 0
+          prog.style.transition = 'stroke-dashoffset 1400ms ease';
+          prog.style.strokeDashoffset = '0';
+          lineIO.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    lineIO.observe(track);
+  }
+});
+</script></body>
+</html>
