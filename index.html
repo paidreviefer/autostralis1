@@ -18,56 +18,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
     html { scroll-behavior: smooth; }
-<!-- Mobile Menu -->
-<style>
-  @media (min-width: 768px){ .only-mobile{ display:none !important; } }
-</style>
-<button id="mobMenuBtn" class="only-mobile fixed top-4 right-4 z-50 inline-flex items-center justify-center rounded-full border border-white/20 bg-black/70 text-white w-11 h-11 backdrop-blur hover:bg-black/85" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-</button>
-
-<div id="mobileMenu" class="only-mobile fixed inset-0 z-50 hidden">
-  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-close="true"></div>
-  <nav class="absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-neutral-950 border-l border-neutral-800 p-6 overflow-y-auto">
-    <div class="flex items-center justify-between mb-6">
-      <span class="text-white/80 font-semibold">Menu</span>
-      <button id="mobMenuClose" class="inline-flex items-center justify-center rounded-full border border-white/20 w-9 h-9 text-white/80 hover:text-white" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.3 5.71L12 12.01l-6.29-6.3-1.42 1.42L10.59 13.4l-6.3 6.3 1.42 1.41 6.29-6.29 6.29 6.29 1.41-1.41-6.29-6.3 6.3-6.29z"/></svg>
-      </button>
-    </div>
-    <ul class="space-y-4 text-lg">
-      <li><a class="block text-white/90 hover:text-white" href="index.html">Home</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="core-strengths.html">Core Strengths</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="founder.html">Founder</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="manufacturers.html">For Manufacturers</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="investors.html">For Investors</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="process.html">Process</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="credibility.html">Credibility</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="case-studies.html">Case Studies</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="faqs.html">FAQs</a></li>
-      <li><a class="block text-white/90 hover:text-white" href="contact.html">Contact</a></li>
-    </ul>
-    <div class="mt-8 border-t border-neutral-800 pt-4">
-      <a href="https://wa.me/919388666777" class="block text-sky-400">WhatsApp</a>
-      <a href="tel:+91-9388666777" class="block text-white/80 mt-2">Call us</a>
-    </div>
-  </nav>
-</div>
-
-<script>
-(function(){
-  var btn = document.getElementById('mobMenuBtn');
-  var panel = document.getElementById('mobileMenu');
-  var closeBtn = document.getElementById('mobMenuClose');
-  if(!btn || !panel) return;
-  function openMenu(){ panel.classList.remove('hidden'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeMenu(){ panel.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  btn.addEventListener('click', openMenu);
-  closeBtn && closeBtn.addEventListener('click', closeMenu);
-  panel.addEventListener('click', function(e){ if(e.target.dataset.close) closeMenu(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
-})();
-</script>
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
     .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
     .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
