@@ -1,107 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
-<meta content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash &amp; detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka." name="description"/>
-<meta content="Autostralis" name="author"/>
-<meta content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure" property="og:title"/>
-<meta content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://www.autostralis.com" property="og:url"/>
-<meta content="https://www.autostralis.com/og-image.jpg" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Case Studies – Autostralis</title>
+  <meta name="description" content="Selected case studies from Autostralis — turnkey car wash & detailing infrastructure delivered to spec, on time."/>
+  <meta name="author" content="Autostralis"/>
+  <meta property="og:title" content="Case Studies – Autostralis"/>
+  <meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.autostralis.com"/>
+  <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" href="assets/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+
+  <style>
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji';}
   </style>
-<script>
-    // Mobile nav toggle
-    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Autostralis",
-    "url": "https://www.autostralis.com",
-    "logo": "https://www.autostralis.com/logo.png",
-    "sameAs": [],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9388666777",
-      "contactType": "customer service",
-      "email": "contact@autostralis.com"
-    }],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Mangalathu Group"
+
+  <script>
+    // Mobile nav toggle (also locks scroll to avoid background scroll)
+    function toggleNav(){
+      const m = document.getElementById('mobileNav');
+      const nowHidden = m.classList.toggle('hidden');
+      const open = !nowHidden;
+      document.documentElement.classList.toggle('overflow-hidden', open);
+      document.body.classList.toggle('overflow-hidden', open);
     }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Autostralis",
+    "url":"https://www.autostralis.com",
+    "logo":"https://www.autostralis.com/logo.png",
+    "sameAs":[],
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+91-9388666777","contactType":"customer service","email":"contact@autostralis.com"}],
+    "parentOrganization":{"@type":"Organization","name":"Mangalathu Group"}
   }
   </script>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-  <link rel="icon" href="assets/favicon.ico?v=2">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
 </head>
-<title>Case Studies – Autostralis</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-  <link rel="icon" href="assets/favicon.ico?v=2">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
-</head>
+
 <body class="bg-neutral-950 text-neutral-100">
+  <!-- Header (desktop + mobile hamburger) -->
   <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-4">
-        <a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;"></a>
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px;width:auto;display:block;">
+        </a>
+
+        <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="hover:text-sky-400 ">Home</a>
-<a href="core-strengths.html" class="hover:text-sky-400 ">Core Strengths</a>
-<a href="founder.html" class="hover:text-sky-400 ">Founder</a>
-<a href="manufacturers.html" class="hover:text-sky-400 ">For Manufacturers</a>
-<a href="investors.html" class="hover:text-sky-400 ">For Investors</a>
-<a href="process.html" class="hover:text-sky-400 ">Process</a>
-<a href="credibility.html" class="hover:text-sky-400 ">Credibility</a>
-<a href="case-studies.html" class="hover:text-sky-400 font-semibold text-sky-400">Case Studies</a>
-<a href="faqs.html" class="hover:text-sky-400 ">FAQs</a>
-<a href="contact.html" class="hover:text-sky-400 ">Contact</a>
+          <a href="index.html" class="hover:text-sky-400">Home</a>
+          <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+          <a href="founder.html" class="hover:text-sky-400">Founder</a>
+          <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+          <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+          <a href="process.html" class="hover:text-sky-400">Process</a>
+          <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+          <a href="case-studies.html" class="hover:text-sky-400 font-semibold text-sky-400">Case Studies</a>
+          <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+          <a href="contact.html" class="hover:text-sky-400">Contact</a>
         </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
+                aria-label="Toggle navigation" onclick="toggleNav()">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
+      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+        <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
+        <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
+        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
+        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
+        <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
+        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
+        <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
+        <a href="case-studies.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Case Studies</a>
+        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
+        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+      </nav>
+    </div>
   </header>
+
   <main>
-<section class="py-20" id="case-studies">
-<div class="mx-auto max-w-7xl px-4">
-<div class="flex items-end justify-between gap-6">
-<h2 class="text-3xl md:text-4xl font-bold">Selected Case Studies</h2>
-<a class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500" href="#contact">Discuss Your Site</a>
-</div>
-<div class="mt-8 grid md:grid-cols-3 gap-6">
-<article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
-<h3 class="font-semibold">High‑Throughput Wash Bay Retrofit</h3>
-<p class="mt-2 text-neutral-300">Converted legacy bay to OEM‑aligned pit with optimized slopes, doubling hourly throughput while reducing pooling complaints to zero.</p>
-</article>
-<article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
-<h3 class="font-semibold">Green Studio with Water Recycling</h3>
-<p class="mt-2 text-neutral-300">Integrated oil traps and 3‑stage recycling to save ~60% fresh water; EV‑ready conduits laid for future charging bays.</p>
-</article>
-<article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
-<h3 class="font-semibold">Multi‑City Brand Roll‑Out</h3>
-<p class="mt-2 text-neutral-300">Standardized finishes and SOPs enabled consistent customer experience across three cities under a single brand.</p>
-</article>
-</div>
-</div>
-</section>
+    <!-- Case studies -->
+    <section id="case-studies" class="py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="flex items-end justify-between gap-6">
+          <h2 class="text-3xl md:text-4xl font-bold">Selected Case Studies</h2>
+          <a href="contact.html" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500">Discuss Your Site</a>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
+            <h3 class="font-semibold">High‑Throughput Wash Bay Retrofit</h3>
+            <p class="mt-2 text-neutral-300">Converted legacy bay to OEM‑aligned pit with optimized slopes, doubling hourly throughput while reducing pooling complaints to zero.</p>
+          </article>
+
+          <article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
+            <h3 class="font-semibold">Green Studio with Water Recycling</h3>
+            <p class="mt-2 text-neutral-300">Integrated oil traps and 3‑stage recycling to save ~60% fresh water; EV‑ready conduits laid for future charging bays.</p>
+          </article>
+
+          <article class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
+            <h3 class="font-semibold">Multi‑City Brand Roll‑Out</h3>
+            <p class="mt-2 text-neutral-300">Standardized finishes and SOPs enabled consistent customer experience across three cities under a single brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="py-10 border-t border-neutral-800 mt-12">
     <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
-      <nav class="text-sm flex flex-wrap gap-3 text-neutral-400"><a href="index.html" class="hover:text-sky-400">Home</a> • <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> • <a href="founder.html" class="hover:text-sky-400">Founder</a> • <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> • <a href="investors.html" class="hover:text-sky-400">For Investors</a> • <a href="process.html" class="hover:text-sky-400">Process</a> • <a href="credibility.html" class="hover:text-sky-400">Credibility</a> • <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> • <a href="faqs.html" class="hover:text-sky-400">FAQs</a> • <a href="contact.html" class="hover:text-sky-400">Contact</a></nav>
+      <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>
