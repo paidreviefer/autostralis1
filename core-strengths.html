@@ -1,32 +1,69 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
-<meta content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash &amp; detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka." name="description"/>
-<meta content="Autostralis" name="author"/>
-<meta content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure" property="og:title"/>
-<meta content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://www.autostralis.com" property="og:url"/>
-<meta content="https://www.autostralis.com/og-image.jpg" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Core Strengths – Autostralis</title>
+  <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
+  <meta name="author" content="Autostralis"/>
+  <meta property="og:title" content="Autostralis – Turnkey Car Wash & Detailing Infrastructure"/>
+  <meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.autostralis.com"/>
+  <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2"/>
+  <link rel="icon" href="assets/favicon.ico?v=2"/>
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2"/>
+
+  <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
     .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
     .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+
+    /* ===== Core Strengths Animations ===== */
+    @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+    #strengths .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; transition-delay: var(--d, 0ms); }
+    #strengths .reveal.is-visible{ opacity:1; transform: translateY(0); animation: fadeUp .6s ease both; }
+
+    #strengths .strength-card{ position: relative; overflow: hidden; border: 1px solid rgba(64,64,64,.9); }
+    #strengths .card-hover{ transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    #strengths .card-hover:hover{ transform: translateY(-6px); box-shadow: 0 14px 36px rgba(56,189,248,.25); border-color: rgba(56,189,248,.45); }
+
+    /* Gradient border sweep on hover */
+    #strengths .strength-card::before{
+      content:""; position:absolute; inset:0; padding:1px; border-radius: 16px;
+      background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
+      background-size: 200% 200%;
+      opacity:0; transition: opacity .25s ease; pointer-events:none;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    #strengths .strength-card:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
+    @keyframes borderSweep { 0%{ background-position: 0 50%; } 100%{ background-position: 200% 50%; } }
+
+    /* Count-up number emphasis */
+    #strengths .strength-number{ color:#38bdf8; font-weight:800; }
   </style>
-<script>
-    // Mobile nav toggle
-    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
+
+  <script>
+    // Mobile nav toggle (locks/unlocks page scroll)
+    function toggleNav(){
+      const m = document.getElementById('mobileNav');
+      const nowHidden = m.classList.toggle('hidden');
+      const open = !nowHidden;
+      document.documentElement.classList.toggle('overflow-hidden', open);
+      document.body.classList.toggle('overflow-hidden', open);
+    }
   </script>
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -40,160 +77,155 @@
       "contactType": "customer service",
       "email": "contact@autostralis.com"
     }],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Mangalathu Group"
-    }
+    "parentOrganization": { "@type": "Organization", "name": "Mangalathu Group" }
   }
   </script>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
-<style>
-/* ===== Core Strengths Animations ===== */
-@keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-
-#strengths .reveal{
-  opacity:0; transform: translateY(16px);
-  transition: opacity .6s ease, transform .6s ease;
-  transition-delay: var(--d, 0ms);
-}
-#strengths .reveal.is-visible{
-  opacity:1; transform: translateY(0);
-  animation: fadeUp .6s ease both;
-}
-
-#strengths .strength-card{
-  position: relative; overflow: hidden;
-  border: 1px solid rgba(64,64,64,.9);
-}
-#strengths .card-hover{
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-#strengths .card-hover:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(56,189,248,.25);
-  border-color: rgba(56,189,248,.45);
-}
-
-/* Gradient border sweep on hover */
-#strengths .strength-card::before{
-  content:""; position:absolute; inset:0; padding:1px; border-radius: 16px;
-  background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
-  background-size: 200% 200%;
-  opacity:0; transition: opacity .25s ease;
-  pointer-events:none;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-}
-#strengths .strength-card:hover::before{
-  opacity:1; animation: borderSweep 3s linear infinite;
-}
-@keyframes borderSweep { 0%{ background-position: 0 50%; } 100%{ background-position: 200% 50%; } }
-
-/* Count-up number emphasis */
-#strengths .strength-number{ color:#38bdf8; font-weight:800; }
-</style></head>
-<title>Core Strengths – Autostralis</title>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+</head>
 
 <body class="bg-neutral-950 text-neutral-100">
-<header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-<div class="mx-auto max-w-7xl px-4">
-<div class="flex items-center justify-between py-4">
-<a class="flex items-center gap-3" href="index.html"><img alt="Autostralis Logo" src="assets/logo.png" style="height:40px; width:auto; display:block;"/></a>
-<nav class="hidden md:flex items-center gap-6 text-sm">
-<a class="hover:text-sky-400" href="index.html">Home</a>
-<a class="hover:text-sky-400 font-semibold text-sky-400" href="core-strengths.html">Core Strengths</a>
-<a class="hover:text-sky-400" href="founder.html">Founder</a>
-<a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a>
-<a class="hover:text-sky-400" href="investors.html">For Investors</a>
-<a class="hover:text-sky-400" href="process.html">Process</a>
-<a class="hover:text-sky-400" href="credibility.html">Credibility</a>
-<a class="hover:text-sky-400" href="case-studies.html">Case Studies</a>
-<a class="hover:text-sky-400" href="faqs.html">FAQs</a>
-<a class="hover:text-sky-400" href="contact.html">Contact</a>
-</nav>
-</div>
-</div>
-</header>
-<main>
-<section class="py-20" id="strengths">
-<div class="mx-auto max-w-7xl px-4">
-<h2 class="text-3xl md:text-4xl font-bold">Core Strengths</h2>
-<div class="mt-8 grid md:grid-cols-3 gap-6">
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:0ms">
-<h3 class="font-semibold">End‑to‑End Execution</h3>
-<p class="mt-2 text-neutral-300">Civil, MEP, equipment integration, interiors, branding, SOPs.</p>
-</div>
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:100ms">
-<h3 class="font-semibold">Fast‑Track Delivery</h3>
-<p class="mt-2 text-neutral-300">Launch‑ready facilities in <strong><span class="strength-number" data-countup="" data-target="30"></span>–<span class="strength-number" data-countup="" data-target="45"></span></strong> days.</p>
-</div>
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:200ms">
-<h3 class="font-semibold">Proven Expertise</h3>
-<p class="mt-2 text-neutral-300">Delivered <strong><span class="strength-number" data-countup="" data-suffix="+" data-target="200"></span> projects</strong> projects in the automotive sector.</p>
-</div>
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:300ms">
-<h3 class="font-semibold">Brand Consistency</h3>
-<p class="mt-2 text-neutral-300">Uniform quality and finishes across multiple sites.</p>
-</div>
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:400ms">
-<h3 class="font-semibold">Sustainability</h3>
-<p class="mt-2 text-neutral-300">Eco‑friendly materials, water recycling, EV‑ready infrastructure.</p>
-</div>
-<div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style=";--d:500ms">
-<h3 class="font-semibold">Safety &amp; Compliance</h3>
-<p class="mt-2 text-neutral-300">BIS checks, electrical safety, and documented SOPs.</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="py-10 border-t border-neutral-800 mt-12">
-<div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-<p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
-<nav class="text-sm flex flex-wrap gap-3 text-neutral-400"><a class="hover:text-sky-400" href="index.html">Home</a> • <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> • <a class="hover:text-sky-400" href="founder.html">Founder</a> • <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> • <a class="hover:text-sky-400" href="investors.html">For Investors</a> • <a class="hover:text-sky-400" href="process.html">Process</a> • <a class="hover:text-sky-400" href="credibility.html">Credibility</a> • <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> • <a class="hover:text-sky-400" href="faqs.html">FAQs</a> • <a class="hover:text-sky-400" href="contact.html">Contact</a></nav>
-</div>
-</footer>
-<script>
-(() => {
-  const easeOut = t => 1 - Math.pow(1 - t, 3);
-  const fmt = n => Intl.NumberFormat('en-IN').format(n);
-  function animateCount(el){
-    const target = +el.getAttribute('data-target');
-    if (isNaN(target)) return;
-    const suffix = el.getAttribute('data-suffix') || "";
-    const duration = +(el.getAttribute('data-duration') || 1100);
-    const start = +(el.getAttribute('data-start') || 0);
-    const t0 = performance.now();
-    const tick = now => {
-      const p = Math.min(1, (now - t0) / duration);
-      const val = Math.round(start + (target - start) * easeOut(p));
-      el.textContent = fmt(val) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    el.dataset.counted = "true";
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting){
-        const el = e.target;
-        if (el.classList.contains('reveal')) el.classList.add('is-visible');
-        el.querySelectorAll?.('[data-countup]').forEach(s => {
-          if (s.dataset.counted !== "true") animateCount(s);
-        });
+  <!-- Header -->
+  <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="index.html" class="hover:text-sky-400">Home</a>
+          <a href="core-strengths.html" class="hover:text-sky-400 font-semibold text-sky-400">Core Strengths</a>
+          <a href="founder.html" class="hover:text-sky-400">Founder</a>
+          <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+          <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+          <a href="process.html" class="hover:text-sky-400">Process</a>
+          <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+          <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+          <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+          <a href="contact.html" class="hover:text-sky-400">Contact</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
+                aria-label="Toggle navigation" onclick="toggleNav()">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
+      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+        <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
+        <a href="core-strengths.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Core Strengths</a>
+        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
+        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
+        <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
+        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
+        <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
+        <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
+        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
+        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="strengths" class="py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl md:text-4xl font-bold">Core Strengths</h2>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:0ms">
+            <h3 class="font-semibold">End‑to‑End Execution</h3>
+            <p class="mt-2 text-neutral-300">Civil, MEP, equipment integration, interiors, branding, SOPs.</p>
+          </div>
+
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:100ms">
+            <h3 class="font-semibold">Fast‑Track Delivery</h3>
+            <p class="mt-2 text-neutral-300">Launch‑ready facilities in <strong><span class="strength-number" data-countup data-target="30"></span>–<span class="strength-number" data-countup data-target="45"></span></strong> days.</p>
+          </div>
+
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:200ms">
+            <h3 class="font-semibold">Proven Expertise</h3>
+            <p class="mt-2 text-neutral-300">Delivered <strong><span class="strength-number" data-countup data-suffix="+" data-target="200"></span> projects</strong> projects in the automotive sector.</p>
+          </div>
+
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:300ms">
+            <h3 class="font-semibold">Brand Consistency</h3>
+            <p class="mt-2 text-neutral-300">Uniform quality and finishes across multiple sites.</p>
+          </div>
+
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:400ms">
+            <h3 class="font-semibold">Sustainability</h3>
+            <p class="mt-2 text-neutral-300">Eco‑friendly materials, water recycling, EV‑ready infrastructure.</p>
+          </div>
+
+          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:500ms">
+            <h3 class="font-semibold">Safety &amp; Compliance</h3>
+            <p class="mt-2 text-neutral-300">BIS checks, electrical safety, and documented SOPs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 border-t border-neutral-800 mt-12">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+      <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+      const fmt = n => Intl.NumberFormat('en-IN').format(n);
+      function animateCount(el){
+        const target = +el.getAttribute('data-target');
+        if (isNaN(target)) return;
+        const suffix = el.getAttribute('data-suffix') || "";
+        const duration = +(el.getAttribute('data-duration') || 1100);
+        const start = +(el.getAttribute('data-start') || 0);
+        const t0 = performance.now();
+        const tick = now => {
+          const p = Math.min(1, (now - t0) / duration);
+          const val = Math.round(start + (target - start) * easeOut(p));
+          el.textContent = fmt(val) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        el.dataset.counted = "true";
       }
-    });
-  }, { threshold: 0.25 });
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('#strengths .reveal').forEach(el => io.observe(el));
-    document.querySelectorAll('#strengths [data-countup]').forEach(el => io.observe(el));
-  });
-})();
-</script></body>
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting){
+            const el = e.target;
+            if (el.classList.contains('reveal')) el.classList.add('is-visible');
+            el.querySelectorAll?.('[data-countup]').forEach(s => {
+              if (s.dataset.counted !== "true") animateCount(s);
+            });
+          }
+        });
+      }, { threshold: 0.25 });
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('#strengths .reveal').forEach(el => io.observe(el));
+        document.querySelectorAll('#strengths [data-countup]').forEach(el => io.observe(el));
+      });
+    })();
+  </script>
+</body>
 </html>
