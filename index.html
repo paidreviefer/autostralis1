@@ -1,93 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autostralis | Automotive Infrastructure Partner</title>
-    <meta name="description" content="Autostralis delivers turnkey car wash and detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka.">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
-        header, footer {
-            background: #111;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        .tagline {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
+  <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash &amp; detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
+  <meta name="author" content="Autostralis"/>
+  <meta property="og:title" content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure"/>
+  <meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.autostralis.com"/>
+  <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2"/>
+  <link rel="icon" href="assets/favicon.ico?v=2"/>
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2"/>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
+    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+
+    /* --- Home: Client logos shiny reveal --- */
+    .logo-wrap{ position: relative; overflow: hidden; opacity: 0; transform: scale(0.92); transition: opacity .6s ease, transform .6s ease; }
+    .logo-wrap.visible{ opacity:1; transform: scale(1); }
+    .logo-wrap::after{
+      content:""; position:absolute; top:0; left:-70%; width:50%; height:100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg); opacity:0;
+    }
+    .logo-wrap.shine::after{ opacity:1; animation: shineSweep .9s ease-out forwards; }
+    @keyframes shineSweep{ to { left: 120%; } }
+
+    /* ========== Scroll reveal for sections ========== */
+    .reveal-section{ opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-section.is-visible{ opacity: 1; transform: translateY(0); }
+
+    /* ========== Button shine (hover) ========== */
+    .btn-shine{ position: relative; overflow: hidden; isolation: isolate; }
+    .btn-shine::after{
+      content:""; position: absolute; top: -120%; left: -50%; width: 50%; height: 300%; transform: rotate(25deg);
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.45) 45%, rgba(255,255,255,0) 70%);
+      opacity: 0; transition: opacity .2s ease;
+    }
+    .btn-shine:hover::after{ opacity: 1; animation: btnSweep .9s ease-out; }
+    @keyframes btnSweep { to { left: 140%; } }
+
+    /* ========== Stat glow pulse when count finishes ========== */
+    @keyframes borderPulse {
+      0% { box-shadow: 0 0 0 rgba(56,189,248,0); border-color: rgba(56,189,248,.25); }
+      50% { box-shadow: 0 8px 32px rgba(56,189,248,.35); border-color: rgba(56,189,248,.6); }
+      100% { box-shadow: 0 0 0 rgba(56,189,248,0); border-color: rgba(255,255,255,.1); }
+    }
+    .pop-glow{ animation: borderPulse 1.2s ease-out 1; }
+
+    /* ==== Hero parallax (video moves slightly slower than scroll) ==== */
+    @media (min-width: 768px){
+      #home .parallax-media{ will-change: transform; transform: translateY(0) scale(1.08); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      #home .parallax-media{ transform: none !important; }
+    }
+
+    /* ==== About card "icon motion" via :before ==== */
+    #about .p-6.rounded-2xl h3{ position: relative; padding-left: 34px; }
+    #about .p-6.rounded-2xl h3::before{
+      content: "🔧"; position: absolute; left: 0; top: 0.1em; font-size: 22px; opacity: .9;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); animation: floatY 4s ease-in-out infinite;
+    }
+    #about .p-6.rounded-2xl:nth-of-type(1) h3::before{ content: "🧩"; }
+    #about .p-6.rounded-2xl:nth-of-type(2) h3::before{ content: "📍"; }
+    @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+    /* Sticky bottom CTA — mobile only */
+    @media (max-width: 767.98px){
+      .sticky-cta {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+        background: rgba(12,12,12,.92); backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(120,120,120,.25);
+        display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+        padding: 10px 12px env(safe-area-inset-bottom);
+      }
+      body { padding-bottom: 70px; } /* avoid content underlap */
+    }
+    .sticky-cta a {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; font-weight: 600; text-decoration: none;
+      padding: 12px; border-radius: 12px;
+    }
+    .sticky-cta .cta-primary { background:#38bdf8; color:#0b0b0b; }
+    .sticky-cta .cta-secondary { border:1px solid #a3a3a3; color:#e5e5e5; }
+
+    /* Floating Action Button (contact dock) */
+    .fab-dock{ position: fixed; right: 16px; bottom: 88px; z-index: 60; display: flex; flex-direction: column; gap: 10px; }
+    .fab-dock a{ width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; text-decoration: none; background: #0f172a; border:1px solid rgba(255,255,255,.12); box-shadow: 0 10px 24px rgba(0,0,0,.35); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .fab-dock a:hover{ transform: translateY(-2px); border-color: rgba(56,189,248,.45); box-shadow: 0 16px 36px rgba(56,189,248,.25); }
+    .fab-wa { color:#25D366; } .fab-call { color:#38bdf8; } .fab-ig { color:#e1306c; }
+    @media (prefers-reduced-motion: reduce){ .fab-dock a:hover{ transform:none; box-shadow: 0 10px 24px rgba(0,0,0,.35); } }
+
+    /* Branded FAB backgrounds and white icons */
+    .fab-dock a{ border: none; }
+    .fab-wa { background:#25D366; color:#fff; }
+    .fab-call { background:#0ea5e9; color:#fff; }
+    .fab-ig {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      color:#fff;
+    }
+    .fab-dock svg{ width:24px; height:24px; display:block; }
+
+    /* Enhanced hover for FABs */
+    .fab-dock a{ transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; }
+    .fab-dock a:hover{ transform: translateY(-2px) scale(1.06); box-shadow: 0 16px 42px rgba(56,189,248,.25); filter: saturate(1.05); }
+    .fab-dock a:active{ transform: scale(0.96); }
+    .fab-dock svg{ width: 24px; height: 24px; }
+
+    /* Typed text effect in hero */
+    .typed-text { border-right: 2px solid #38bdf8; white-space: nowrap; overflow: hidden; display: inline-block; }
+    @keyframes blinkCursor { 0%, 50% { border-color: #38bdf8; } 51%, 100% { border-color: transparent; } }
+    .typed-text { animation: blinkCursor .8s step-end infinite; }
+
+    /* Process timeline */
+    .process-timeline { position: relative; }
+    .process-step { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .process-step.visible { opacity: 1; transform: translateY(0); }
+    .process-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; background: #38bdf8; top: 0; bottom: 0; }
+    .process-item { position: relative; width: 50%; padding: 20px; }
+    .process-item:nth-child(odd) { left: 0; text-align: right; }
+    .process-item:nth-child(even) { left: 50%; }
+    .process-marker { width: 16px; height: 16px; background: #38bdf8; border-radius: 50%; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); }
+    @media (max-width: 768px) {
+      .process-line { left: 8px; transform: none; }
+      .process-item, .process-item:nth-child(even) { left: 0; width: 100%; text-align: left; padding-left: 32px; }
+      .process-marker { left: 8px; transform: none; }
+    }
+  </style>
+
+  <script>
+    // Mobile nav toggle (locks scroll when open)
+    function toggleNav(){
+      const m = document.getElementById('mobileNav');
+      const nowHidden = m.classList.toggle('hidden');
+      const open = !nowHidden;
+      document.documentElement.classList.toggle('overflow-hidden', open);
+      document.body.classList.toggle('overflow-hidden', open);
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Autostralis",
+    "url":"https://www.autostralis.com",
+    "logo":"https://www.autostralis.com/logo.png",
+    "sameAs":["https://instagram.com/autostralis"],
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+91-9388666777","contactType":"customer service","email":"contact@autostralis.com"}],
+    "parentOrganization":{"@type":"Organization","name":"Mangalathu Group"}
+  }
+  </script>
 </head>
-<body>
 
-<header>
-    <h1>Autostralis</h1>
-    <p class="tagline">From bare space to business-ready launch</p>
-    <small>Part of Mangalathu Group</small>
-</header>
+<body class="bg-neutral-950 text-neutral-100">
+  <!-- Header -->
+  <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px;width:auto;display:block;">
+        </a>
 
-<main>
-    <section id="about">
-        <h2>About Us</h2>
-        <p><strong>Autostralis</strong> is a <strong>premium automotive infrastructure partner</strong>, delivering turnkey car wash and detailing facilities from <strong>bare space to business‑ready launch</strong>. We serve <strong>car wash & detailing equipment manufacturers</strong> and <strong>investors/entrepreneurs</strong> with end‑to‑end solutions — civil works, MEP, equipment integration, interiors, branding, and operational handover.</p>
-        <p>Backed by the <strong>Mangalathu Group’s decade‑plus expertise</strong> in civil contracting, interiors, and project execution, Autostralis has successfully delivered <strong>200+ automotive facilities</strong> across <strong>Tamil Nadu, Kerala, and Karnataka</strong>.</p>
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="index.html" class="hover:text-sky-400 font-semibold text-sky-400">Home</a>
+          <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+          <a href="founder.html" class="hover:text-sky-400">Founder</a>
+          <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+          <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+          <a href="process.html" class="hover:text-sky-400">Process</a>
+          <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+          <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+          <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+          <a href="contact.html" class="hover:text-sky-400">Contact</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
+                aria-label="Toggle navigation" onclick="toggleNav()">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
+      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+        <a href="index.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Home</a>
+        <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
+        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
+        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
+        <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
+        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
+        <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
+        <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
+        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
+        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative pt-28 md:pt-32 overflow-hidden min-h-[90svh] md:min-h-[600px]">
+      <!-- Video Background -->
+      <video class="absolute inset-0 w-full h-full object-cover parallax-media" autoplay loop muted playsinline>
+        <source src="assets/hero.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-black/55"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 mx-auto max-w-7xl px-4 min-h-[60svh] md:min-h-[600px] flex items-center pb-20">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            <span class="typed-text"></span>
+          </h1>
+          <p class="mt-5 text-neutral-200 text-lg md:text-xl">
+            From bare space to business-ready launch. We design, build, and hand over
+            installation‑ready bays and premium studios that perform from day one.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="px-5 py-3 rounded-xl bg-sky-500 text-neutral-900 font-semibold hover:bg-sky-400 btn-shine">Get a Quote</a>
+            <a href="#mfg" class="px-5 py-3 rounded-xl border border-neutral-200 text-neutral-100 hover:border-neutral-400 btn-shine">See Services</a>
+          </div>
+          <p class="mt-4 text-sm text-neutral-200/80">Part of <span class="font-semibold text-neutral-100">Mangalathu Group</span></p>
+        </div>
+      </div>
+
+      <!-- Metrics badges -->
+      <style>
+        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes fadeInUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+      </style>
+      <div class="absolute bottom-28 right-6 z-10 flex gap-6">
+        <div class="p-4 rounded-xl bg-neutral-900/60 border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-sky-400" data-countup data-suffix="+" data-target="200"></div>
+          <div>Projects</div>
+        </div>
+        <div class="p-4 rounded-xl bg-neutral-900/60 border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-sky-400">
+            <span data-countup data-target="30"></span><span>–</span><span data-countup data-target="45"></span>
+          </div>
+          <div>Days</div>
+        </div>
+        <div class="p-4 rounded-xl bg-neutral-900/60 border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-sky-400" data-countup data-target="3"></div>
+          <div>Regions</div>
+        </div>
+      </div>
+      <div class="absolute bottom-6 right-6 z-10" aria-live="polite">
+        <div class="rounded-2xl px-5 py-3 text-white/90 bg-neutral-900/50 border border-white/15 backdrop-blur"
+             style="animation: fadeInUp .6s ease-out both, floaty 3s ease-in-out infinite;">
+          Launch‑ready delivery in <span class="font-semibold text-white">30–45 days</span>
+        </div>
+      </div>
     </section>
 
-    <section id="difference">
-        <h3>What makes us different?</h3>
-        <ul>
-            <li>Single partner from drawings to handover</li>
-            <li>OEM‑aligned pits, slopes, utilities & safety</li>
-            <li>Brand‑ready interiors and customer experience</li>
-            <li>Transparent timelines and cost control</li>
-        </ul>
+    <!-- About -->
+    <section id="about" class="py-20 reveal-section">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold">About Us</h2>
+            <p class="mt-6 text-neutral-300 leading-relaxed">
+              Autostralis is a <strong>premium automotive infrastructure partner</strong>, delivering turnkey car wash and detailing facilities from
+              <strong>bare space to business‑ready launch</strong>. We serve <strong>car wash &amp; detailing equipment manufacturers</strong> and
+              <strong>investors/entrepreneurs</strong> with end‑to‑end solutions — civil works, MEP, equipment integration, interiors, branding, and operational handover.
+            </p>
+            <p class="mt-4 text-neutral-300 leading-relaxed">
+              Backed by the <strong>Mangalathu Group’s decade‑plus expertise</strong> in civil contracting, interiors, and project execution, Autostralis has successfully delivered
+              <strong>200+ automotive facilities</strong> across <strong>Tamil Nadu, Kerala, and Karnataka</strong>.
+            </p>
+          </div>
+          <div class="grid gap-4">
+            <div class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
+              <h3 class="font-semibold">What makes us different?</h3>
+              <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+                <li>Single partner from drawings to handover</li>
+                <li>OEM‑aligned pits, slopes, utilities &amp; safety</li>
+                <li>Brand‑ready interiors and customer experience</li>
+                <li>Transparent timelines and cost control</li>
+              </ul>
+            </div>
+            <div class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
+              <h3 class="font-semibold">Service Regions</h3>
+              <p class="mt-2 text-neutral-300">Tamil Nadu • Kerala • Karnataka (with capability to mobilize pan‑India on request)</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="service-regions">
-        <h3>Service Regions</h3>
-        <p>Tamil Nadu • Kerala • Karnataka (with capability to mobilize pan‑India on request)</p>
+    <!-- Vision/Mission -->
+    <section id="vision" class="py-20 bg-neutral-900/40 border-y border-neutral-800 reveal-section">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold">Vision</h2>
+            <p class="mt-6 text-neutral-300 leading-relaxed">“To set the benchmark for automotive care infrastructure in India and beyond — combining precision engineering, fast‑track execution, and brand‑focused design to create spaces that inspire confidence and drive profitability.”</p>
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold">Mission</h2>
+            <ul class="mt-6 list-disc list-inside text-neutral-300 space-y-2">
+              <li>Deliver <strong>installation‑ready sites</strong> that align perfectly with equipment specifications and brand standards.</li>
+              <li>Provide <strong>turnkey business‑ready studios</strong> for rapid ROI.</li>
+              <li>Ensure every project meets <strong>global quality standards</strong> while optimized for <strong>local operating conditions</strong>.</li>
+              <li>Integrate <strong>sustainable solutions</strong> — water recycling and EV readiness — into every build.</li>
+              <li>Maintain a <strong>client‑first approach</strong> with transparent timelines, cost control, and long‑term support.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section id="vision">
-        <h2>Vision</h2>
-        <blockquote>
-            “To set the benchmark for automotive care infrastructure in India and beyond — combining precision engineering, fast‑track execution, and brand‑focused design to create spaces that inspire confidence and drive profitability.”
-        </blockquote>
-    </section>
+  <!-- Clients -->
+  <section id="clients" class="py-16 border-t border-neutral-800 bg-neutral-900/40">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Clients &amp; Partners</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center justify-items-center">
+        <div class="logo-wrap"><img src="assets/Picture1.png" alt="Client 1" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture2.png" alt="Client 2" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture3.png" alt="Client 3" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture4.png" alt="Client 4" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture5.png" alt="Client 5" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture6.png" alt="Client 6" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture7.png" alt="Client 7" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture8.png" alt="Client 8" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture9.png" alt="Client 9" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture10.png" alt="Client 10" class="max-h-12 md:max-h-16 object-contain"/></div>
+        <div class="logo-wrap"><img src="assets/Picture11.png" alt="Client 11" class="max-h-12 md:max-h-16 object-contain"/></div>
+      </div>
+    </div>
+  </section>
 
-    <section id="mission">
-        <h2>Mission</h2>
-        <ul>
-            <li>Deliver <strong>installation‑ready sites</strong> that align perfectly with equipment specifications and brand standards.</li>
-            <li>Provide <strong>turnkey business‑ready studios</strong> for rapid ROI.</li>
-            <li>Ensure every project meets <strong>global quality standards</strong> while optimized for <strong>local operating conditions</strong>.</li>
-            <li>Integrate <strong>sustainable solutions</strong> — water recycling and EV readiness — into every build.</li>
-            <li>Maintain a <strong>client‑first approach</strong> with transparent timelines, cost control, and long‑term support.</li>
-        </ul>
-    </section>
-</main>
+  <!-- (Hidden) Process timeline if you need it -->
+  <section id="process" class="py-16 border-t border-neutral-800 bg-neutral-900/40" style="display:none;">
+    <div class="mx-auto max-w-5xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Our Process</h2>
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Client Consultation</h3><p class="text-neutral-300">Understanding your needs and vision for the perfect auto care space.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Site Feasibility &amp; Approvals</h3><p class="text-neutral-300">Checking location, dimensions, and necessary permissions.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Concept Design &amp; 3D Planning</h3><p class="text-neutral-300">Visualizing the complete setup before construction.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Civil Construction</h3><p class="text-neutral-300">Executing all groundwork, flooring, and structural build.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">MEP &amp; Drainage Setup</h3><p class="text-neutral-300">Installing water, power, and drainage lines to spec.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Equipment Integration</h3><p class="text-neutral-300">Placing and connecting all wash/detailing machinery.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Interior Finishing &amp; Branding</h3><p class="text-neutral-300">Bringing the space to life with finishes and your brand.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Testing &amp; Quality Checks</h3><p class="text-neutral-300">Ensuring everything runs perfectly before handover.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Staff Training &amp; Handover</h3><p class="text-neutral-300">Training your team for optimal operations.</p></div>
+        <div class="process-item process-step"><div class="process-marker"></div><h3 class="text-xl font-semibold mb-2">Post-Completion Support</h3><p class="text-neutral-300">Ongoing assistance to keep things running smoothly.</p></div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-    <p>&copy; 2025 Autostralis | Part of Mangalathu Group</p>
-</footer>
+  <!-- Footer -->
+  <footer class="py-10 border-t border-neutral-800 mt-12">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+      <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
+    </div>
+  </footer>
 
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-cta md:hidden">
+    <a class="cta-primary btn-shine" href="contact.html" aria-label="Get a Quote">Get a Quote</a>
+    <a class="cta-secondary" href="#mfg" aria-label="See Services">See Services</a>
+  </div>
+
+  <!-- FABs -->
+  <div class="fab-dock">
+    <a class="fab-wa" href="https://wa.me/919388666777" target="_blank" rel="noopener" aria-label="WhatsApp us">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M16.5 13.5c-.2 0-.5 0-.7-.1s-.5-.1-.7.1c-.2.2-.6.7-.8.8-.1.1-.2.1-.4 0-.9-.4-1.8-.9-2.5-1.6s-1.2-1.6-1.6-2.5c-.1-.1-.1-.3 0-.4.1-.2.6-.6.8-.8.2-.2.2-.5.1-.7s-.5-1.2-.6-1.5c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.7.7-1.1 1.6-1.1 2.6 0 .7.2 1.4.5 2 .7 1.5 1.8 2.9 3.2 3.9 1 .8 2.1 1.4 3.4 1.7.4.1.8.1 1.1.1 1 0 1.9-.4 2.6-1.1.2-.2.3-.5.3-.7v-.6c0-.2 0-.5-.5-.7-.3-.1-1.2-.5-1.5-.6Z"></path>
+        <path d="M9.5 20.5 6 21l.5-3.5A8.5 8.5 0 1 1 12 20.5a8.4 8.4 0 0 1-2.5-.4z"></path>
+      </svg>
+    </a>
+    <a class="fab-call" href="tel:+919388666777" aria-label="Call us">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.6 19.6 0 0 1-8.54-3.12 19.3 19.3 0 0 1-6-6A19.6 19.6 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h2a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.45-1.32a2 2 0 0 1 2.11-.45c.85 .29 1.73 .5 2.63 .62A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+    </a>
+    <a class="fab-ig" href="https://instagram.com/autostralis" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    (() => {
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+      const fmt = n => Intl.NumberFormat('en-IN').format(n);
+      function animateCount(el) {
+        const targetAttr = el.getAttribute('data-target');
+        const suffix = el.getAttribute('data-suffix') || "";
+        const duration = +(el.getAttribute('data-duration') || 1200);
+        const start = +(el.getAttribute('data-start') || 0);
+        const target = +targetAttr;
+        if (isNaN(target)) return;
+        const startTime = performance.now();
+        function tick(now) {
+          const p = Math.min(1, (now - startTime) / duration);
+          const val = Math.round(start + (target - start) * easeOut(p));
+          el.textContent = fmt(val) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        el.dataset.counted = "true";
+        const card = el.closest('.p-4'); if(card){ card.classList.add('pop-glow'); setTimeout(()=>card.classList.remove('pop-glow'), 1400); }
+      }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const el = e.target;
+            if (el.dataset.counted !== "true") animateCount(el);
+          }
+        });
+      }, { threshold: 0.3 });
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-countup]').forEach(el => io.observe(el));
+      });
+    })();
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('#clients .logo-wrap');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => { entry.target.classList.add('visible','shine'); }, i * 100);
+          }
+        });
+      }, { threshold: 0.2 });
+      items.forEach(item => io.observe(item));
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.reveal-section');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
+      }, { threshold: 0.2 });
+      sections.forEach(sec => io.observe(sec));
+    });
+  </script>
+
+  <script>
+    (() => {
+      const media = document.querySelector('#home .parallax-media');
+      if(!media) return;
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      let ticking = false, lastY = 0;
+      function onScroll(){
+        lastY = window.scrollY || window.pageYOffset;
+        if (!ticking){ requestAnimationFrame(update); ticking = true; }
+      }
+      function update(){
+        const offset = lastY * 0.12;
+        media.style.transform = `translateY(${offset}px) scale(1.08)`;
+        ticking = false;
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // once on load
+    })();
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.querySelector('.typed-text');
+      if (!el) return;
+      const phrases = ["Launch-Ready Car Studios", "Turnkey Auto Care Spaces", "Brand-Perfect Installations"];
+      let i = 0, j = 0, deleting = false;
+      function type() {
+        const current = phrases[i];
+        el.textContent = current.slice(0, j);
+        if (!deleting && j < current.length) {
+          j++; setTimeout(type, 100);
+        } else if (deleting && j > 0) {
+          j--; setTimeout(type, 50);
+        } else {
+          deleting = !deleting;
+          if (!deleting) { i = (i + 1) % phrases.length; }
+          setTimeout(type, deleting ? 800 : 1000);
+        }
+      }
+      type();
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const steps = document.querySelectorAll('.process-step');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => { e.target.classList.add('visible'); }, i * 100);
+          }
+        });
+      }, { threshold: 0.2 });
+      steps.forEach(step => io.observe(step));
+    });
+  </script>
 </body>
 </html>
