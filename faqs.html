@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Autostralis – Core Strengths + FAQs</title>
+<title>Autostralis – FAQs</title>
 
 <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
 <meta name="author" content="Autostralis"/>
@@ -30,20 +30,11 @@
   .nav-link:hover{background:rgba(255,255,255,.06)}
   .sheet{transform: translateY(-8px); opacity:0; pointer-events:none; transition: transform .18s ease, opacity .18s ease}
   .sheet.open{transform:none; opacity:1; pointer-events:auto}
-  /* Core Strengths visuals */
-  @keyframes fadeUp { from{opacity:0; transform: translateY(16px)} to{opacity:1; transform:none} }
-  #strengths .reveal{opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease}
-  #strengths .reveal.is-visible{opacity:1; transform:none; animation: fadeUp .6s ease both}
-  #strengths .card{position:relative; overflow:hidden; border:1px solid rgba(64,64,64,.9)}
-  #strengths .card:hover{transform: translateY(-6px); transition: .25s; border-color: rgba(56,189,248,.45); box-shadow:0 14px 36px rgba(56,189,248,.25)}
-  #strengths .card::before{content:""; position:absolute; inset:0; padding:1px; border-radius:16px; background:linear-gradient(120deg,#38bdf8,#0ea5e9,#38bdf8); background-size:200% 200%; opacity:0; transition:opacity .25s; pointer-events:none; -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite: exclude}
-  #strengths .card:hover::before{opacity:1; animation: borderSweep 3s linear infinite}
-  @keyframes borderSweep {0%{background-position:0 50%}100%{background-position:200% 50%}}
 </style>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100">
-  <!-- Header (desktop nav + mobile hamburger) -->
+  <!-- Header -->
   <header class="sticky top-0 inset-x-0 z-[60] bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-4">
@@ -54,13 +45,14 @@
         <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="index.html" class="hover:text-sky-400">Home</a>
-          <a href="core-strengths.html" class="hover:text-sky-400 font-semibold text-sky-400">Core Strengths</a>
+          <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
           <a href="founder.html" class="hover:text-sky-400">Founder</a>
           <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
           <a href="investors.html" class="hover:text-sky-400">For Investors</a>
           <a href="process.html" class="hover:text-sky-400">Process</a>
           <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
           <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+          <a href="faqs.html" class="hover:text-sky-400 font-semibold text-sky-400" aria-current="page">FAQs</a>
           <a href="contact.html" class="hover:text-sky-400">Contact</a>
         </nav>
 
@@ -79,65 +71,27 @@
 
     <!-- Mobile sheet -->
     <div id="mobileNav" class="md:hidden sheet glass border-b border-white/10">
-      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-1">
+      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-1 text-sm">
         <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link bg-white/10 text-sky-300" href="core-strengths.html" aria-current="page">Core Strengths</a>
+        <a class="nav-link" href="core-strengths.html">Core Strengths</a>
         <a class="nav-link" href="founder.html">Founder</a>
         <a class="nav-link" href="manufacturers.html">For Manufacturers</a>
         <a class="nav-link" href="investors.html">For Investors</a>
         <a class="nav-link" href="process.html">Process</a>
         <a class="nav-link" href="credibility.html">Credibility</a>
         <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link bg-white/10 text-sky-300" href="faqs.html" aria-current="page">FAQs</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Core Strengths -->
-    <section id="strengths" class="py-20">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl md:text-4xl font-bold">Core Strengths</h2>
-
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal">
-            <h3 class="font-semibold">End‑to‑End Execution</h3>
-            <p class="mt-2 text-neutral-300">Civil, MEP, equipment integration, interiors, branding, SOPs.</p>
-          </div>
-
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal" style="--d:100ms">
-            <h3 class="font-semibold">Fast‑Track Delivery</h3>
-            <p class="mt-2 text-neutral-300">Launch‑ready facilities in <strong>30–45 days</strong>.</p>
-          </div>
-
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal" style="--d:200ms">
-            <h3 class="font-semibold">Proven Expertise</h3>
-            <p class="mt-2 text-neutral-300">Delivered <strong>200+ projects</strong> in the automotive sector.</p>
-          </div>
-
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal" style="--d:300ms">
-            <h3 class="font-semibold">Brand Consistency</h3>
-            <p class="mt-2 text-neutral-300">Uniform quality and finishes across multiple sites.</p>
-          </div>
-
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal" style="--d:400ms">
-            <h3 class="font-semibold">Sustainability</h3>
-            <p class="mt-2 text-neutral-300">Eco‑friendly materials, water recycling, EV‑ready infrastructure.</p>
-          </div>
-
-          <div class="card p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal" style="--d:500ms">
-            <h3 class="font-semibold">Safety &amp; Compliance</h3>
-            <p class="mt-2 text-neutral-300">BIS checks, electrical safety, and documented SOPs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQs embedded in Core Strengths page -->
+    <!-- FAQs ONLY -->
     <section id="faqs" class="py-20 bg-neutral-900/40 border-y border-neutral-800">
       <div class="mx-auto max-w-5xl px-4">
         <div class="flex items-end justify-between gap-6">
-          <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+          <h1 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h1>
           <a href="contact.html" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500">Ask a Question</a>
         </div>
 
@@ -183,24 +137,14 @@
         <a class="hover:text-sky-400" href="process.html">Process</a> •
         <a class="hover:text-sky-400" href="credibility.html">Credibility</a> •
         <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> •
+        <a class="hover:text-sky-400" href="faqs.html">FAQs</a> •
         <a class="hover:text-sky-400" href="contact.html">Contact</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    // Reveal on scroll for strengths
-    (function(){
-      const els = document.querySelectorAll('#strengths .reveal');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        });
-      }, {threshold:0.25});
-      els.forEach(el=>io.observe(el));
-    })();
-
-    // Hamburger logic
+    // Mobile hamburger logic
     (function(){
       const toggle = document.getElementById('navToggle');
       const sheet  = document.getElementById('mobileNav');
