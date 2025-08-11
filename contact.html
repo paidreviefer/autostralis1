@@ -110,7 +110,7 @@
           <!-- Left: Quick actions & info -->
           <aside class="md:col-span-2 space-y-6">
             <div class="p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
-              <h2 class="text-3xl md:text-4xl font-bold">Contact Us</h2>
+              <h1 class="text-3xl md:text-4xl font-bold">Contact Us</h1>
               <p class="mt-3 text-neutral-300">
                 Let’s scope your site and get you a precise timeline &amp; budget.
               </p>
@@ -147,7 +147,7 @@
             </div>
           </aside>
 
-          <!-- Right: Modern form -->
+          <!-- Right: Modern form with more options -->
           <div class="md:col-span-3">
             <div class="relative rounded-3xl border border-neutral-800 overflow-hidden">
               <!-- subtle gradient panel -->
@@ -155,6 +155,7 @@
 
               <form class="relative p-6 md:p-8 bg-neutral-950/70">
                 <div class="grid md:grid-cols-2 gap-5">
+                  <!-- Basic -->
                   <div>
                     <label for="name" class="block text-sm text-neutral-400 mb-1">Name</label>
                     <input id="name" name="name" placeholder="Your name"
@@ -169,9 +170,90 @@
                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition" />
                   </div>
 
-                  <div class="md:col-span-2">
-                    <label for="phone" class="block text-sm text-neutral-400 mb-1">Phone (optional)</label>
+                  <div>
+                    <label for="phone" class="block text-sm text-neutral-400 mb-1">Phone</label>
                     <input id="phone" name="phone" placeholder="+91 ..."
+                           class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                  focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition" />
+                  </div>
+
+                  <!-- Location -->
+                  <div>
+                    <label for="region" class="block text-sm text-neutral-400 mb-1">Region</label>
+                    <select id="region" name="region"
+                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition">
+                      <option value="" disabled selected>Select region</option>
+                      <option value="TN">Tamil Nadu</option>
+                      <option value="KL">Kerala</option>
+                      <option value="KA">Karnataka</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="city" class="block text-sm text-neutral-400 mb-1">City</label>
+                    <input id="city" name="city" placeholder="City"
+                           class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                  focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition" />
+                  </div>
+
+                  <!-- Project details -->
+                  <div>
+                    <label for="projectType" class="block text-sm text-neutral-400 mb-1">Project Type</label>
+                    <select id="projectType" name="projectType"
+                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition">
+                      <option value="" disabled selected>Select type</option>
+                      <option>Car Wash</option>
+                      <option>Detailing Studio</option>
+                      <option>Both / Multi‑service</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="timeline" class="block text-sm text-neutral-400 mb-1">Preferred Timeline</label>
+                    <select id="timeline" name="timeline"
+                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition">
+                      <option value="" disabled selected>Select</option>
+                      <option>ASAP</option>
+                      <option>30–45 days</option>
+                      <option>60–90 days</option>
+                      <option>Planning / Exploratory</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="budget" class="block text-sm text-neutral-400 mb-1">Budget Range</label>
+                    <select id="budget" name="budget"
+                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition">
+                      <option value="" disabled selected>Select</option>
+                      <option>₹10–25L</option>
+                      <option>₹25–50L</option>
+                      <option>₹50L–₹1Cr</option>
+                      <option>₹1Cr+</option>
+                      <option>Undecided</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="contactPref" class="block text-sm text-neutral-400 mb-1">Preferred Contact</label>
+                    <select id="contactPref" name="contactPref"
+                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
+                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition">
+                      <option value="" disabled selected>Select</option>
+                      <option>WhatsApp</option>
+                      <option>Call</option>
+                      <option>Email</option>
+                    </select>
+                  </div>
+
+                  <div class="md:col-span-2">
+                    <label for="brand" class="block text-sm text-neutral-400 mb-1">Preferred Equipment Brand (optional)</label>
+                    <input id="brand" name="brand" placeholder="e.g., Karcher, Istobal, etc."
                            class="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 outline-none
                                   focus:border-sky-500 focus:ring-4 focus:ring-sky-500/20 transition" />
                   </div>
@@ -213,7 +295,7 @@
       </div>
     </section>
 
-    <!-- Optional: mobile sticky quick actions (kept subtle) -->
+    <!-- Optional: mobile sticky quick actions -->
     <div class="md:hidden fixed left-0 right-0 bottom-3 z-40 px-4">
       <div class="grid grid-cols-2 gap-3">
         <a href="https://wa.me/919388666777" target="_blank" rel="noopener"
