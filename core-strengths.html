@@ -48,7 +48,7 @@
     #strengths .strength-card:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
     @keyframes borderSweep { 0%{ background-position: 0 50%; } 100%{ background-position: 200% 50%; } }
 
-    /* Count-up number emphasis */
+    /* Count-up number emphasis (kept for compatibility if needed) */
     #strengths .strength-number{ color:#38bdf8; font-weight:800; }
   </style>
 
@@ -133,39 +133,166 @@
   </header>
 
   <main>
+    <!-- ===================== CORE STRENGTHS (non-repetitive) ===================== -->
     <section id="strengths" class="py-20">
       <div class="mx-auto max-w-7xl px-4">
         <h2 class="text-3xl md:text-4xl font-bold">Core Strengths</h2>
+        <p class="mt-3 text-neutral-300 max-w-3xl">
+          What we bring to every project — a predictable, engineering‑first approach that turns empty shells into
+          high‑performing car wash & detailing studios.
+        </p>
 
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:0ms">
-            <h3 class="font-semibold">End‑to‑End Execution</h3>
-            <p class="mt-2 text-neutral-300">Civil, MEP, equipment integration, interiors, branding, SOPs.</p>
+        <!-- Thematic blocks: approach > not proof -->
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <!-- Execution Excellence -->
+          <article class="border p-6 rounded-2xl bg-neutral-900/40 border-neutral-800 strength-card card-hover reveal" style="--d:0ms">
+            <div class="flex items-start gap-3">
+              <span class="shrink-0 p-2 rounded-xl bg-neutral-800/70 border border-neutral-700">
+                <!-- workflow icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6h4v4H6V6Zm8 0h4v4h-4V6ZM6 14h4v4H6v-4Zm8 1h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Execution Excellence</h3>
+                <p class="mt-2 text-neutral-300">
+                  One contract, one blueprint, one accountable team. Civil, MEP, integration, interiors and brand finishes are
+                  sequenced to avoid rework.
+                </p>
+                <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-neutral-300">
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>Single‑point ownership</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>Pre‑approved shop drawings</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>Milestone checklists</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>Snag‑free handover</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speed & Predictability -->
+          <article class="border p-6 rounded-2xl bg-neutral-900/40 border-neutral-800 strength-card card-hover reveal" style="--d:80ms">
+            <div class="flex items-start gap-3">
+              <span class="shrink-0 p-2 rounded-xl bg-neutral-800/70 border border-neutral-700">
+                <!-- timer icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 2h6M12 8v5l3 2M12 22a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Speed &amp; Predictability</h3>
+                <p class="mt-2 text-neutral-300">
+                  Critical paths are locked early. We plan for approvals and site constraints so civil, MEP and interiors progress
+                  without idle time.
+                </p>
+                <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-neutral-300">
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>Front‑loaded approvals pack</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>Look‑ahead schedules</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>Vendor & OEM coordination</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>Issue escalation window</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Precision Engineering -->
+          <article class="border p-6 rounded-2xl bg-neutral-900/40 border-neutral-800 strength-card card-hover reveal" style="--d:160ms">
+            <div class="flex items-start gap-3">
+              <span class="shrink-0 p-2 rounded-xl bg-neutral-800/70 border border-neutral-700">
+                <!-- target icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 4v4m0 8v4m8-8h-4M4 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Precision Engineering</h3>
+                <p class="mt-2 text-neutral-300">
+                  We design bays for throughput and longevity — pits, slopes, oil traps, electrical routes and automation
+                  cabling aligned to OEM specs.
+                </p>
+                <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-neutral-300">
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Drainage & slope logic</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Clean cable segregation</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Service access planning</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Brand‑book finishes</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sustainability & Safety -->
+          <article class="border p-6 rounded-2xl bg-neutral-900/40 border-neutral-800 strength-card card-hover reveal" style="--d:240ms">
+            <div class="flex items-start gap-3">
+              <span class="shrink-0 p-2 rounded-xl bg-neutral-800/70 border border-neutral-700">
+                <!-- shield leaf -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5.5c0 4.6-3.6 7.9-8 8-4.4-.1-8-3.4-8-8V7l8-4Z" stroke="currentColor" stroke-width="2"/><path d="M9 14c1.5-1.2 3-2 6-2-.5 2.5-2 4-4 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3 class="font-semibold">Sustainability &amp; Safety</h3>
+                <p class="mt-2 text-neutral-300">
+                  Materials and utilities are selected for safety, durability and lower lifecycle cost — built EV‑ready from day one.
+                </p>
+                <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-neutral-300">
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime-400"></span>Water recycling options</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime-400"></span>BIS electrical practices</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime-400"></span>Low‑VOC finishes</li>
+                  <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-lime-400"></span>EV‑ready conduits</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- About Mangalathu Group -->
+        <div class="mt-16 border-t border-neutral-800 pt-10">
+          <div class="flex flex-col md:flex-row md:items-center gap-6">
+            <img src="assets/mlogo.png" alt="Mangalathu Group Logo" class="h-20 w-auto">
+            <div>
+              <h3 class="text-2xl font-bold">About Mangalathu Group</h3>
+              <p class="mt-3 text-neutral-300 max-w-3xl">
+                Mangalathu Group is a diversified enterprise with a legacy of delivering excellence across infrastructure,
+                interiors, automotive solutions, and turnkey project execution. Our engineering depth, quality culture, and
+                vendor partnerships empower Autostralis to deliver world‑class car care infrastructure.
+              </p>
+            </div>
           </div>
 
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:100ms">
-            <h3 class="font-semibold">Fast‑Track Delivery</h3>
-            <p class="mt-2 text-neutral-300">Launch‑ready facilities in <strong><span class="strength-number" data-countup data-target="30"></span>–<span class="strength-number" data-countup data-target="45"></span></strong> days.</p>
+          <!-- Highlights -->
+          <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm">
+              <span class="block text-lg font-bold text-sky-400">15+ Years</span>
+              <span class="text-neutral-300">Industry experience</span>
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm">
+              <span class="block text-lg font-bold text-sky-400">300+</span>
+              <span class="text-neutral-300">Completed projects</span>
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm">
+              <span class="block text-lg font-bold text-sky-400">Multi‑Sector</span>
+              <span class="text-neutral-300">From automotive to civil works</span>
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm">
+              <span class="block text-lg font-bold text-sky-400">Trusted Brands</span>
+              <span class="text-neutral-300">Partnerships with global OEMs</span>
+            </div>
           </div>
+        </div>
 
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:200ms">
-            <h3 class="font-semibold">Proven Expertise</h3>
-            <p class="mt-2 text-neutral-300">Delivered <strong><span class="strength-number" data-countup data-suffix="+" data-target="200"></span> projects</strong> projects in the automotive sector.</p>
+        <!-- Promise strip -->
+        <div class="mt-10 grid md:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm reveal" style="--d:0ms">
+            <span class="px-2 py-1 rounded-lg bg-sky-600/20 text-sky-300 border border-sky-700/40 text-xs">No Rework</span>
+            <p class="mt-2 text-neutral-300">We sequence trades to eliminate clashes between civil, plumbing, electrical and equipment install.</p>
           </div>
-
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:300ms">
-            <h3 class="font-semibold">Brand Consistency</h3>
-            <p class="mt-2 text-neutral-300">Uniform quality and finishes across multiple sites.</p>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm reveal" style="--d:80ms">
+            <span class="px-2 py-1 rounded-lg bg-amber-600/20 text-amber-300 border border-amber-700/40 text-xs">Clear Ownership</span>
+            <p class="mt-2 text-neutral-300">One responsible team from drawings to handover, with punch‑list closure documented.</p>
           </div>
-
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:400ms">
-            <h3 class="font-semibold">Sustainability</h3>
-            <p class="mt-2 text-neutral-300">Eco‑friendly materials, water recycling, EV‑ready infrastructure.</p>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 text-sm reveal" style="--d:160ms">
+            <span class="px-2 py-1 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-700/40 text-xs">Built to Last</span>
+            <p class="mt-2 text-neutral-300">Durable materials, safe routing and maintainable layouts reduce downtime over the long term.</p>
           </div>
+        </div>
 
-          <div class="border p-6 card-hover strength-card reveal border-neutral-800 rounded-2xl bg-neutral-900/40" style="--d:500ms">
-            <h3 class="font-semibold">Safety &amp; Compliance</h3>
-            <p class="mt-2 text-neutral-300">BIS checks, electrical safety, and documented SOPs.</p>
+        <!-- CTA -->
+        <div class="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p class="text-neutral-300">Want the playbook behind these strengths?</p>
+          <div class="flex gap-3">
+            <a href="process.html" class="inline-flex items-center rounded-xl border border-sky-500/60 px-4 py-2 text-sm hover:bg-sky-500/10">See Our Process</a>
+            <a href="credibility.html" class="inline-flex items-center rounded-xl border border-neutral-700 px-4 py-2 text-sm hover:bg-neutral-800">Proof of Work</a>
           </div>
         </div>
       </div>
