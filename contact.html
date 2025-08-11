@@ -3,71 +3,61 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Contact – Autostralis</title>
-
-  <!-- Fonts + Tailwind -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Meta (Black Template base) -->
-  <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
+  <title>Autostralis – Contact</title>
+  <meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across India."/>
   <meta name="author" content="Autostralis"/>
+
   <meta property="og:title" content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure"/>
   <meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.autostralis.com"/>
   <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
 
-  <!-- Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
   <link rel="icon" href="assets/favicon.ico?v=2">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial; }
-
-    /* Glass panel + focus ring polish */
-    .glass { background: rgba(12,12,12,.6); backdrop-filter: blur(10px); }
-    .inp {
-      @apply w-full rounded-xl bg-neutral-900/70 border border-neutral-800 text-neutral-100 placeholder-neutral-400 px-4 py-3 outline-none;
-    }
-    .inp:focus { box-shadow: 0 0 0 3px rgba(56,189,248,.25); border-color:#38bdf8; }
-    .btn-primary {
-      @apply w-full font-semibold rounded-xl px-5 py-3 text-neutral-950;
-      background: linear-gradient(90deg,#38bdf8,#0ea5e9);
-    }
-    .btn-primary:hover { filter: brightness(1.06); }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.06); }
+    /* Inputs */
+    .ipt { background:#0b0f14; border:1px solid rgba(255,255,255,.08); color:#e5e7eb; }
+    .ipt:focus { outline: none; border-color:#38bdf8; box-shadow: 0 0 0 4px rgba(56,189,248,.15); }
+    .btn-primary { background:#38bdf8; color:#0b0b0b; font-weight:700; }
+    .btn-primary:hover { background:#22c3fd; }
+    /* Desktop nav + mobile hamburger */
+    .hb { width:48px; height:48px; border-radius:14px; border:1px solid rgba(255,255,255,.15); display:grid; place-items:center; }
+    .hb:hover { border-color:#38bdf8; }
+    #mobileNav a { display:block; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.08); }
   </style>
 
-  <script>
-    // Mobile nav toggle
-    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
-
-    // Allow only 10 digits in visible phone field
-    function formatPhoneDigits(el){
-      let v = el.value.replace(/\D/g,'').slice(0,10);
-      el.value = v;
-    }
-
-    // Before submit: copy +91 + digits into hidden "phone" field for Formspree
-    function beforeSubmit(){
-      const digits = document.getElementById('phone10').value.trim();
-      if(!/^\d{10}$/.test(digits)){ alert('Please enter a valid 10‑digit mobile number.'); return false; }
-      document.getElementById('phone').value = '+91' + digits;
-      return true;
-    }
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Autostralis",
+    "url":"https://www.autostralis.com",
+    "logo":"https://www.autostralis.com/logo.png",
+    "sameAs":[],
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+91-9388666777","contactType":"customer service","email":"contact@autostralis.com"}],
+    "parentOrganization":{"@type":"Organization","name":"Mangalathu Group"}
+  }
   </script>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100">
-
   <!-- Header -->
   <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-4">
         <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/logo.png" alt="Autostralis Logo" class="h-10 w-auto block">
+          <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px;width:auto;display:block;">
         </a>
 
         <!-- Desktop nav -->
@@ -81,101 +71,81 @@
           <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
           <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
           <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
-          <a href="contact.html" class="text-sky-400 font-semibold">Contact</a>
+          <a href="contact.html" class="hover:text-sky-400 font-semibold text-sky-400">Contact</a>
         </nav>
 
         <!-- Mobile hamburger -->
-        <button class="md:hidden p-2 rounded-lg border border-neutral-700" aria-label="Open menu" onclick="toggleNav()">
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="#e5e7eb" stroke-width="2" stroke-linecap="round"/>
+        <button class="md:hidden hb" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.toggle('hidden')">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
       </div>
     </div>
-
-    <!-- Mobile drawer -->
-    <div id="mobileNav" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800">
-      <div class="px-4 py-3 space-y-2 text-sm">
-        <a href="index.html" class="block hover:text-sky-400">Home</a>
-        <a href="core-strengths.html" class="block hover:text-sky-400">Core Strengths</a>
-        <a href="founder.html" class="block hover:text-sky-400">Founder</a>
-        <a href="manufacturers.html" class="block hover:text-sky-400">For Manufacturers</a>
-        <a href="investors.html" class="block hover:text-sky-400">For Investors</a>
-        <a href="process.html" class="block hover:text-sky-400">Process</a>
-        <a href="credibility.html" class="block hover:text-sky-400">Credibility</a>
-        <a href="case-studies.html" class="block hover:text-sky-400">Case Studies</a>
-        <a href="faqs.html" class="block hover:text-sky-400">FAQs</a>
-        <a href="contact.html" class="block hover:text-sky-400">Contact</a>
+    <!-- Mobile menu -->
+    <div id="mobileNav" class="hidden md:hidden border-t border-neutral-800 bg-neutral-950/95 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-4 py-2 text-sm">
+        <a href="index.html">Home</a>
+        <a href="core-strengths.html">Core Strengths</a>
+        <a href="founder.html">Founder</a>
+        <a href="manufacturers.html">For Manufacturers</a>
+        <a href="investors.html">For Investors</a>
+        <a href="process.html">Process</a>
+        <a href="credibility.html">Credibility</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html" class="text-sky-400 font-semibold">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- Main -->
-  <main class="py-16">
-    <div class="mx-auto max-w-5xl px-4">
-      <div class="grid lg:grid-cols-3 gap-8">
+  <main>
+    <section class="py-16 md:py-20" id="contact">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Left: form card -->
+          <div class="md:col-span-2 p-6 md:p-8 rounded-3xl glass border border-neutral-800">
+            <h1 class="text-3xl md:text-4xl font-extrabold">Contact Us</h1>
+            <p class="mt-2 text-neutral-300">Let’s scope your site and give you a precise timeline &amp; budget.</p>
 
-        <!-- Quick contact cards -->
-        <aside class="lg:col-span-1 space-y-4">
-          <div class="p-5 rounded-2xl border border-neutral-800 glass">
-            <h2 class="font-semibold text-lg">Quick Contact</h2>
-            <p class="text-neutral-300 mt-1">Reach us instantly via WhatsApp or Call.</p>
-            <div class="mt-4 grid grid-cols-2 gap-3">
-              <a href="https://wa.me/919388666777" target="_blank" rel="noopener"
-                 class="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 hover:border-emerald-400">
-                <img src="assets/whatsapp.png" alt="WhatsApp" class="h-5 w-5">
-                <span class="font-medium">WhatsApp</span>
-              </a>
-              <a href="tel:+919388666777"
-                 class="flex items-center justify-center gap-2 rounded-xl border border-sky-500/40 bg-sky-500/10 px-4 py-3 hover:border-sky-400">
-                <img src="assets/call.png" alt="Call" class="h-5 w-5">
-                <span class="font-medium">Call</span>
-              </a>
-            </div>
-            <div class="mt-5 text-sm text-neutral-300 space-y-1">
-              <p><span class="text-neutral-400">Email:</span> <a class="hover:text-sky-400" href="mailto:contact@autostralis.com">contact@autostralis.com</a></p>
-              <p><span class="text-neutral-400">Regions:</span> Tamil Nadu • Kerala • Karnataka (Pan‑India on request)</p>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Form -->
-        <section class="lg:col-span-2">
-          <div class="p-6 md:p-8 rounded-3xl border border-neutral-800 glass">
-            <h1 class="text-3xl md:text-4xl font-bold">Contact Us</h1>
-            <p class="mt-2 text-neutral-300">Let’s scope your site and give you a precise timeline & budget.</p>
-
-            <form action="https://formspree.io/f/mdkdyvdg" method="POST" onsubmit="return beforeSubmit()" class="mt-8 space-y-5">
-              <!-- Hidden field that will receive +91XXXXXXXXXX -->
-              <input type="hidden" name="phone" id="phone"/>
-
+            <form id="contactForm" action="https://formspree.io/f/mdkdyvdg" method="POST" class="mt-8 space-y-6">
+              <!-- row 1 -->
               <div class="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="name">Name *</label>
-                  <input class="inp" id="name" name="name" required placeholder="Your name">
+                  <label for="name" class="block text-sm text-neutral-400 mb-1">Name *</label>
+                  <input id="name" name="name" class="ipt w-full rounded-xl px-4 py-3" placeholder="Your name" required>
                 </div>
                 <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="email">Email *</label>
-                  <input class="inp" id="email" name="email" type="email" required placeholder="you@example.com">
+                  <label for="email" class="block text-sm text-neutral-400 mb-1">Email *</label>
+                  <input id="email" name="email" type="email" class="ipt w-full rounded-xl px-4 py-3" placeholder="you@example.com" required>
                 </div>
               </div>
 
+              <!-- row 2 -->
               <div class="grid md:grid-cols-2 gap-4">
+                <!-- Phone with +91 -->
                 <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="phone10">Mobile (+91) *</label>
-                  <div class="relative">
-                    <span class="absolute inset-y-0 left-3 grid place-items-center text-neutral-400 select-none">+91</span>
-                    <input class="inp pl-12"
-                           id="phone10" name="phone10" inputmode="numeric" pattern="\d{10}" maxlength="10"
-                           oninput="formatPhoneDigits(this)" required placeholder="10‑digit number">
+                  <label class="block text-sm text-neutral-400 mb-1" for="phone">Mobile (India) *</label>
+                  <div class="flex gap-2">
+                    <input class="w-20 rounded-xl ipt px-4 py-3 text-neutral-300" value="+91" aria-label="Country code" disabled>
+                    <input id="phone" name="phone" class="ipt flex-1 rounded-xl px-4 py-3" placeholder="10‑digit mobile" inputmode="numeric" autocomplete="tel-national" minlength="10" maxlength="10" required>
                   </div>
-                  <p class="text-xs text-neutral-500 mt-1">We’ll prepend +91 automatically when sending.</p>
+                  <!-- hidden full number sent to Formspree -->
+                  <input type="hidden" id="phone_full" name="phone_full">
                 </div>
 
                 <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="region">Region *</label>
-                  <select class="inp" id="region" name="region" required>
-                    <option value="">Select State / UT</option>
+                  <label for="city" class="block text-sm text-neutral-400 mb-1">Location / City</label>
+                  <input id="city" name="city" class="ipt w-full rounded-xl px-4 py-3" placeholder="City, State">
+                </div>
+              </div>
+
+              <!-- row 3 -->
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label for="region" class="block text-sm text-neutral-400 mb-1">Region (State / UT) *</label>
+                  <select id="region" name="region" class="ipt w-full rounded-xl px-4 py-3" required>
+                    <option value="" disabled selected>Select State / UT</option>
                     <!-- States -->
                     <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
                     <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option>
@@ -187,64 +157,126 @@
                     <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
                     <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
                     <!-- UTs -->
-                    <option>Andaman and Nicobar Islands</option><option>Chandigarh</option>
-                    <option>Dadra and Nagar Haveli and Daman and Diu</option><option>Delhi</option>
-                    <option>Jammu and Kashmir</option><option>Ladakh</option><option>Lakshadweep</option>
+                    <option>Andaman & Nicobar Islands</option><option>Chandigarh</option>
+                    <option>Dadra & Nagar Haveli and Daman & Diu</option><option>Delhi (NCT)</option>
+                    <option>Jammu & Kashmir</option><option>Ladakh</option><option>Lakshadweep</option>
                     <option>Puducherry</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="equipment" class="block text-sm text-neutral-400 mb-1">Equipment / Project Type</label>
+                  <select id="equipment" name="equipment" class="ipt w-full rounded-xl px-4 py-3">
+                    <option value="" selected>— Select (optional) —</option>
+                    <option>Car Wash Bay</option>
+                    <option>Detailing Studio</option>
+                    <option>Foam / Steam Wash</option>
+                    <option>Vacuum / Extraction</option>
+                    <option>Compressed Air Lines</option>
+                    <option>Oil Trap / Water Recycling</option>
+                    <option>Custom (describe below)</option>
                   </select>
                 </div>
               </div>
 
+              <!-- row 4 -->
               <div class="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="equipment">Equipment (optional)</label>
-                  <input class="inp" id="equipment" name="equipment" placeholder="e.g., Steam, Wash bay, Vacuum…">
-                </div>
-                <div>
-                  <label class="block text-sm text-neutral-400 mb-1" for="timeline">Target Timeline *</label>
-                  <select class="inp" id="timeline" name="timeline" required>
+                  <label for="timeline" class="block text-sm text-neutral-400 mb-1">Target Timeline</label>
+                  <select id="timeline" name="timeline" class="ipt w-full rounded-xl px-4 py-3">
                     <option>ASAP (0–30 days)</option>
                     <option>1–2 months</option>
+                    <option>2–3 months</option>
                     <option>3+ months</option>
-                    <option>Exploring / Not sure</option>
+                    <option>Just exploring</option>
                   </select>
+                </div>
+                <div>
+                  <label for="company" class="block text-sm text-neutral-400 mb-1">Company / Brand (optional)</label>
+                  <input id="company" name="company" class="ipt w-full rounded-xl px-4 py-3" placeholder="Your company / brand">
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm text-neutral-400 mb-1" for="details">Project Details *</label>
-                <textarea class="inp" id="details" name="details" rows="5" required
-                  placeholder="Tell us about your site, size, brand, utilities (water/power/drainage), and any deadlines…"></textarea>
+                <label for="message" class="block text-sm text-neutral-400 mb-1">Project Details</label>
+                <textarea id="message" name="message" rows="5" class="ipt w-full rounded-xl px-4 py-3" placeholder="Tell us about your site, size, brand, utilities, and any deadlines..."></textarea>
               </div>
 
-              <button type="submit" class="btn-primary">Send Message</button>
-              <p class="text-center text-xs text-neutral-500">Powered by <a href="https://formspree.io" class="hover:text-sky-400" target="_blank" rel="noopener">Formspree</a></p>
+              <button type="submit" class="btn-primary w-full rounded-xl px-5 py-4 text-lg">Send Message</button>
+
+              <p class="text-xs text-neutral-500 text-center">
+                Powered by <a href="https://formspree.io" target="_blank" rel="noopener" class="underline hover:text-sky-400">Formspree</a>.
+              </p>
             </form>
           </div>
-        </section>
 
+          <!-- Right: quick contacts -->
+          <aside class="md:col-span-1">
+            <div class="p-6 md:p-8 rounded-3xl glass border border-neutral-800 sticky md:top-24">
+              <h3 class="text-xl font-semibold">Quick Contact</h3>
+              <div class="mt-5 space-y-4 text-neutral-300">
+                <a href="tel:+919388666777" class="flex items-center gap-3 hover:text-sky-400">
+                  <img src="assets/call.png" alt="Call" class="w-6 h-6 object-contain">
+                  <span>Call: +91‑9388666777</span>
+                </a>
+                <a href="https://wa.me/919388666777" target="_blank" rel="noopener" class="flex items-center gap-3 hover:text-sky-400">
+                  <img src="assets/whatsapp.png" alt="WhatsApp" class="w-6 h-6 object-contain">
+                  <span>WhatsApp us</span>
+                </a>
+                <div class="pt-2 border-t border-neutral-800 text-sm">
+                  <p><span class="text-neutral-400">Email:</span> <a class="hover:text-sky-400" href="mailto:contact@autostralis.com">contact@autostralis.com</a></p>
+                  <p class="mt-2"><span class="text-neutral-400">Regions:</span> Tamil Nadu • Kerala • Karnataka (pan‑India on request)</p>
+                  <p class="mt-2"><span class="text-neutral-400">Web:</span> <a class="hover:text-sky-400" href="https://www.autostralis.com">www.autostralis.com</a></p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="py-10 border-t border-neutral-800 mt-12">
+  <footer class="py-10 border-t border-neutral-800">
     <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
       <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
-        <a class="hover:text-sky-400" href="index.html">Home</a> •
-        <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> •
-        <a class="hover:text-sky-400" href="founder.html">Founder</a> •
-        <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> •
-        <a class="hover:text-sky-400" href="investors.html">For Investors</a> •
-        <a class="hover:text-sky-400" href="process.html">Process</a> •
-        <a class="hover:text-sky-400" href="credibility.html">Credibility</a> •
-        <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> •
-        <a class="hover:text-sky-400" href="faqs.html">FAQs</a> •
-        <a class="hover:text-sky-400" href="contact.html">Contact</a>
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
       </nav>
     </div>
   </footer>
 
+  <!-- Phone sanitization & submit assembly -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const phone = document.getElementById('phone');
+      const phoneFull = document.getElementById('phone_full');
+
+      // Keep only digits; cap at 10 while typing
+      phone.addEventListener('input', () => {
+        phone.value = phone.value.replace(/\D/g, '').slice(0, 10);
+      });
+
+      form.addEventListener('submit', (e) => {
+        phone.value = phone.value.replace(/\D/g, '').slice(0, 10);
+        if (phone.value.length !== 10) {
+          e.preventDefault();
+          alert('Please enter a valid 10‑digit Indian mobile number.');
+          phone.focus();
+          return;
+        }
+        phoneFull.value = `+91${phone.value}`; // this is sent to Formspree
+      });
+    })();
+  </script>
 </body>
 </html>
