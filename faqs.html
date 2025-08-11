@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Autostralis – FAQs</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FAQs – Autostralis</title>
+  <meta name="description" content="Answers to common questions about Autostralis turnkey car wash & detailing infrastructure."/>
+  <meta name="author" content="Autostralis"/>
 
-<meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
-<meta name="author" content="Autostralis"/>
-<meta property="og:title" content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure"/>
-<meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.autostralis.com"/>
-<meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+  <meta property="og:title" content="FAQs – Autostralis"/>
+  <meta property="og:description" content="Answers to common questions about Autostralis turnkey car wash & detailing infrastructure."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.autostralis.com/faqs.html"/>
+  <meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-<link rel="icon" href="assets/favicon.ico?v=2">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" href="assets/favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
 
-<style>
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,'Helvetica Neue', Arial}
-  .glass{backdrop-filter: blur(8px); background: rgba(12,12,12,.82)}
-  .nav-link{display:block; padding:12px 16px; border-radius:12px}
-  .nav-link:hover{background:rgba(255,255,255,.06)}
-  .sheet{transform: translateY(-8px); opacity:0; pointer-events:none; transition: transform .18s ease, opacity .18s ease}
-  .sheet.open{transform:none; opacity:1; pointer-events:auto}
-</style>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+
+    /* Mobile polish: remove large blank space under sticky header */
+    @media (max-width: 767.98px){
+      #faqs { padding-top: 12px !important; }
+    }
+
+    /* Simple glass token (kept for consistency with Black template) */
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Autostralis",
+    "url": "https://www.autostralis.com",
+    "logo": "https://www.autostralis.com/logo.png",
+    "sameAs": [],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-9388666777",
+      "contactType": "customer service",
+      "email": "contact@autostralis.com"
+    }],
+    "parentOrganization": { "@type": "Organization", "name": "Mangalathu Group" }
+  }
+  </script>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100">
   <!-- Header -->
-  <header class="sticky top-0 inset-x-0 z-[60] bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+  <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-4">
-        <a href="index.html" class="flex items-center gap-3" aria-label="Autostralis — Home">
+        <a href="index.html" class="flex items-center gap-3">
           <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px;width:auto;display:block;">
         </a>
 
-        <!-- Desktop nav -->
+        <!-- Desktop nav (hidden on mobile) -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="index.html" class="hover:text-sky-400">Home</a>
           <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
@@ -52,126 +73,123 @@
           <a href="process.html" class="hover:text-sky-400">Process</a>
           <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
           <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
-          <a href="faqs.html" class="hover:text-sky-400 font-semibold text-sky-400" aria-current="page">FAQs</a>
+          <a href="faqs.html" class="hover:text-sky-400 font-semibold text-sky-400">FAQs</a>
           <a href="contact.html" class="hover:text-sky-400">Contact</a>
         </nav>
 
-        <!-- Hamburger (mobile only) -->
-        <button id="navToggle"
-                class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-xl border border-neutral-700 hover:border-neutral-500"
-                aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="4" y1="7"  x2="20" y2="7"></line>
-            <line x1="4" y1="12" x2="20" y2="12"></line>
-            <line x1="4" y1="17" x2="20" y2="17"></line>
+        <!-- Mobile hamburger (hidden on md+) -->
+        <button class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-xl border border-neutral-700"
+                aria-label="Open menu"
+                onclick="document.getElementById('mobileNav').classList.remove('hidden')">
+          <span class="sr-only">Open menu</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile sheet -->
-    <div id="mobileNav" class="md:hidden sheet glass border-b border-white/10">
-      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-1 text-sm">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="core-strengths.html">Core Strengths</a>
-        <a class="nav-link" href="founder.html">Founder</a>
-        <a class="nav-link" href="manufacturers.html">For Manufacturers</a>
-        <a class="nav-link" href="investors.html">For Investors</a>
-        <a class="nav-link" href="process.html">Process</a>
-        <a class="nav-link" href="credibility.html">Credibility</a>
-        <a class="nav-link" href="case-studies.html">Case Studies</a>
-        <a class="nav-link bg-white/10 text-sky-300" href="faqs.html" aria-current="page">FAQs</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-      </nav>
+    <!-- Mobile menu sheet -->
+    <div id="mobileNav" class="fixed inset-0 z-50 hidden">
+      <div class="absolute inset-0 bg-black/70" onclick="this.parentElement.classList.add('hidden')"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-72 bg-neutral-950 border-l border-neutral-800 p-4">
+        <div class="flex items-center justify-between">
+          <strong class="tracking-wide">Menu</strong>
+          <button class="w-10 h-10 grid place-items-center rounded-lg border border-neutral-700"
+                  onclick="document.getElementById('mobileNav').classList.add('hidden')"
+                  aria-label="Close menu">✕</button>
+        </div>
+        <nav class="mt-4 grid gap-3 text-sm">
+          <a class="py-2 border-b border-neutral-800" href="index.html">Home</a>
+          <a class="py-2 border-b border-neutral-800" href="core-strengths.html">Core Strengths</a>
+          <a class="py-2 border-b border-neutral-800" href="founder.html">Founder</a>
+          <a class="py-2 border-b border-neutral-800" href="manufacturers.html">For Manufacturers</a>
+          <a class="py-2 border-b border-neutral-800" href="investors.html">For Investors</a>
+          <a class="py-2 border-b border-neutral-800" href="process.html">Process</a>
+          <a class="py-2 border-b border-neutral-800" href="credibility.html">Credibility</a>
+          <a class="py-2 border-b border-neutral-800" href="case-studies.html">Case Studies</a>
+          <a class="py-2 border-b border-neutral-800 text-sky-400" href="faqs.html">FAQs</a>
+          <a class="py-2" href="contact.html">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
+  <!-- Main -->
   <main>
-    <!-- FAQs ONLY -->
-    <section id="faqs" class="py-20 bg-neutral-900/40 border-y border-neutral-800">
+    <!-- FAQs -->
+    <section id="faqs" class="py-12 md:py-20 bg-neutral-900/40 border-y border-neutral-800">
       <div class="mx-auto max-w-5xl px-4">
-        <div class="flex items-end justify-between gap-6">
-          <h1 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h1>
-          <a href="contact.html" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500">Ask a Question</a>
-        </div>
+        <h1 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h1>
 
         <div class="mt-8 divide-y divide-neutral-800">
           <details class="py-4 group">
-            <summary class="cursor-pointer font-semibold group-open:text-sky-400">What is the typical project timeline?</summary>
-            <p class="mt-3 text-neutral-300">For standard studios, our fast‑track model delivers in <strong>30–45 days</strong> after approvals, subject to scope and site conditions.</p>
+            <summary class="cursor-pointer font-semibold group-open:text-sky-400">
+              What is the typical project timeline?
+            </summary>
+            <p class="mt-3 text-neutral-300">
+              For standard studios, our fast‑track model delivers in <strong>30–45 days</strong> after approvals,
+              subject to scope and site conditions.
+            </p>
           </details>
 
           <details class="py-4 group">
-            <summary class="cursor-pointer font-semibold group-open:text-sky-400">Do you help with authority approvals?</summary>
-            <p class="mt-3 text-neutral-300">Yes. We provide guidance and support documentation for local approvals wherever required.</p>
+            <summary class="cursor-pointer font-semibold group-open:text-sky-400">
+              Do you help with authority approvals?
+            </summary>
+            <p class="mt-3 text-neutral-300">
+              Yes. We provide guidance and support documentation for local approvals wherever required.
+            </p>
           </details>
 
           <details class="py-4 group">
-            <summary class="cursor-pointer font-semibold group-open:text-sky-400">Can you work with my preferred equipment brand?</summary>
-            <p class="mt-3 text-neutral-300">Absolutely. We align pits, utilities, and controls with OEM specifications from any leading brand.</p>
+            <summary class="cursor-pointer font-semibold group-open:text-sky-400">
+              Can you work with my preferred equipment brand?
+            </summary>
+            <p class="mt-3 text-neutral-300">
+              Absolutely. We align pits, utilities, and controls with OEM specifications from any leading brand.
+            </p>
           </details>
 
           <details class="py-4 group">
-            <summary class="cursor-pointer font-semibold group-open:text-sky-400">Do you offer maintenance after handover?</summary>
-            <p class="mt-3 text-neutral-300">Yes. We offer maintenance plans, preventive inspections, and on‑call technical support.</p>
+            <summary class="cursor-pointer font-semibold group-open:text-sky-400">
+              Do you offer maintenance after handover?
+            </summary>
+            <p class="mt-3 text-neutral-300">
+              Yes. We offer maintenance plans, preventive inspections, and on‑call technical support.
+            </p>
           </details>
 
           <details class="py-4 group">
-            <summary class="cursor-pointer font-semibold group-open:text-sky-400">Which regions do you serve?</summary>
-            <p class="mt-3 text-neutral-300">Primary operations in <strong>Tamil Nadu, Kerala, Karnataka</strong>. We can mobilize to other regions on request.</p>
+            <summary class="cursor-pointer font-semibold group-open:text-sky-400">
+              Which regions do you serve?
+            </summary>
+            <p class="mt-3 text-neutral-300">
+              Primary operations in <strong>Tamil Nadu, Kerala, Karnataka</strong>. We can mobilize to other regions on request.
+            </p>
           </details>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="py-10 border-t border-neutral-800 mt-12">
     <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
       <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
-        <a class="hover:text-sky-400" href="index.html">Home</a> •
-        <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> •
-        <a class="hover:text-sky-400" href="founder.html">Founder</a> •
-        <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> •
-        <a class="hover:text-sky-400" href="investors.html">For Investors</a> •
-        <a class="hover:text-sky-400" href="process.html">Process</a> •
-        <a class="hover:text-sky-400" href="credibility.html">Credibility</a> •
-        <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> •
-        <a class="hover:text-sky-400" href="faqs.html">FAQs</a> •
-        <a class="hover:text-sky-400" href="contact.html">Contact</a>
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
       </nav>
     </div>
   </footer>
-
-  <script>
-    // Mobile hamburger logic
-    (function(){
-      const toggle = document.getElementById('navToggle');
-      const sheet  = document.getElementById('mobileNav');
-      if(!toggle || !sheet) return;
-
-      const open = () => { sheet.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-      const close = () => { sheet.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
-
-      toggle.addEventListener('click', ()=> sheet.classList.contains('open') ? close() : open());
-
-      // Close on outside click
-      document.addEventListener('click', (e)=>{
-        if(!sheet.classList.contains('open')) return;
-        const within = sheet.contains(e.target) || toggle.contains(e.target);
-        if(!within) close();
-      });
-
-      // Close on link tap
-      sheet.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-
-      // Close on Esc
-      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && sheet.classList.contains('open')) close(); });
-
-      // Ensure closed on desktop resize
-      const mq = window.matchMedia('(min-width: 768px)');
-      mq.addEventListener('change', e => { if(e.matches) close(); });
-    })();
-  </script>
 </body>
 </html>
