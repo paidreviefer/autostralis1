@@ -1,513 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure</title>
-<meta content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka." name="description"/>
-<meta content="Autostralis" name="author"/>
-<meta property="og:title" content="Autostralis – Turnkey Car Wash &amp; Detailing Infrastructure"/>
-<meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.autostralis.com"/>
-<meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>For Manufacturers – Autostralis</title>
+  <meta name="description" content="Your Installation-Ready Infrastructure Partner — we deliver bays on time and to spec, reducing after-sales issues and protecting brand reputation."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-<link rel="icon" href="assets/favicon.ico?v=2">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial}
 
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-  .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-  .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+    /* Mobile nav */
+    #mobileNav{transition:max-height .3s ease; overflow:hidden}
+    #mobileNav.hidden{max-height:0}
+    #mobileNav.show{max-height:520px}
 
-  /* ===== EXISTING Animations ===== */
-  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-  #mfg .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; transition-delay: var(--d, 0ms); }
-  #mfg .reveal.is-visible{ opacity:1; transform: translateY(0); animation: fadeUp .6s ease both; }
-  #mfg .step-card{ position:relative; overflow:hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  #mfg .step-card:hover{ transform: translateY(-6px); box-shadow: 0 14px 36px rgba(56,189,248,.25); border-color: rgba(56,189,248,.45); }
-  #mfg .step-card::before{
-    content:""; position:absolute; inset:0; padding:1px; border-radius:16px;
-    background: linear-gradient(120deg,#38bdf8,#0ea5e9,#38bdf8); background-size:200% 200%;
-    opacity:0; transition:opacity .25s ease; pointer-events:none;
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor; mask-composite:exclude;
-  }
-  #mfg .step-card:hover::before{ opacity:1; animation:borderSweep 3s linear infinite; }
-  @keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
-  #mfg .step-card ul li{ opacity:0; transform: translateY(8px); }
-  #mfg .step-card.is-visible ul li{ animation: fadeUp .5s ease forwards; }
-  #mfg .step-card.is-visible ul li:nth-child(1){ animation-delay:.1s; }
-  #mfg .step-card.is-visible ul li:nth-child(2){ animation-delay:.2s; }
-  #mfg .step-card.is-visible ul li:nth-child(3){ animation-delay:.3s; }
-  #mfg .step-card.is-visible ul li:nth-child(4){ animation-delay:.4s; }
-  #mfg .step-card.is-visible ul li:nth-child(5){ animation-delay:.5s; }
+    /* Reveal animations */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; transition-delay:var(--d,0ms)}
+    .reveal.is-visible{opacity:1; transform:none}
 
-  /* Modal (popup form) */
-  .modal-enter { opacity: 0; transform: translateY(10px); }
-  .modal-enter-active { opacity: 1; transform: translateY(0); transition: opacity .18s ease, transform .18s ease; }
-  .fade-enter { opacity: 0; }
-  .fade-enter-active { opacity: 1; transition: opacity .18s ease; }
+    /* Card hover */
+    .card{
+      position:relative; overflow:hidden;
+      border:1px solid rgba(120,120,120,.25);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover{transform:translateY(-6px); border-color:rgba(56,189,248,.45); box-shadow:0 14px 36px rgba(56,189,248,.2)}
+    .card::before{
+      content:""; position:absolute; inset:0; padding:1px; border-radius:16px;
+      background:linear-gradient(120deg,#38bdf8,#0ea5e9,#38bdf8); background-size:200% 200%;
+      opacity:0; transition:opacity .25s ease; pointer-events:none;
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+    }
+    .card:hover::before{opacity:1; animation:borderSweep 3s linear infinite}
+    @keyframes borderSweep{0%{background-position:0 50%}100%{background-position:200% 50%}}
 
-  /* ===== NEW Animations and Styles ===== */
+    /* Why partner cards */
+    .neg{border-color:rgba(248,113,113,.35); background:rgba(127,29,29,.35)}
+    .pos{border-color:rgba(34,197,94,.35); background:rgba(20,83,45,.35)}
+  </style>
 
-  /* Body background animation */
-  @keyframes background-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  .bg-animated {
-    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 80%), #0a0a0a;
-    background-size: 200% 200%;
-    animation: background-pulse 15s ease-in-out infinite;
-  }
-
-  /* Header and Nav Animations */
-  @keyframes header-bg-pulse {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  .header-bg {
-    background: linear-gradient(90deg, rgba(23, 23, 23, 0.8) 0%, rgba(23, 23, 23, 0.6) 20%, rgba(23, 23, 23, 0.6) 80%, rgba(23, 23, 23, 0.8) 100%);
-    background-size: 200% 100%;
-    animation: header-bg-pulse 10s ease-in-out infinite;
-  }
-  .nav-link {
-    position: relative;
-    transition: color 0.3s ease-in-out;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background-color: #38bdf8;
-    transition: width 0.3s ease-in-out;
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  .btn-hover-scale {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  .btn-hover-scale:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-  }
-
-  /* Main section hero reveal */
-  .title-reveal, .subtitle-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  }
-  .subtitle-reveal {
-    animation-delay: 0.2s;
-  }
-
-  /* Table reveal animation */
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  #why-partner-table tr {
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: var(--d, 0ms);
-  }
-  #why-partner-table tr.is-visible {
-    opacity: 1;
-    transform: translateX(0);
-    animation: fadeInRight 0.6s ease-out both;
-  }
-
-  /* Emoji bounce animation */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-  .emoji-bounce:hover {
-    animation: bounce 0.5s ease-in-out infinite;
-  }
-</style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"Autostralis",
-  "url":"https://www.autostralis.com",
-  "logo":"https://www.autostralis.com/logo.png",
-  "sameAs":[],
-  "contactPoint":[{"@type":"ContactPoint","telephone":"+91-9388666777","contactType":"customer service","email":"contact@autostralis.com"}],
-  "parentOrganization":{"@type":"Organization","name":"Mangalathu Group"}
-}
-</script>
+  <script>
+    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const io = new IntersectionObserver((ents)=>{
+        ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+      }, {threshold:.22});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    });
+  </script>
 </head>
 
-<title>For Manufacturers – Autostralis</title>
+<body class="bg-neutral-950 text-neutral-100">
 
-<body class="bg-neutral-950 text-neutral-100 bg-animated">
-
-<!-- Mobile nav toggle -->
-<script>
-  function toggleNav(){
-    const m = document.getElementById('mobileNav');
-    const nowHidden = m.classList.toggle('hidden');
-    const open = !nowHidden;
-    document.documentElement.classList.toggle('overflow-hidden', open);
-    document.body.classList.toggle('overflow-hidden', open);
-  }
-</script>
-
-<header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800 header-bg">
-  <div class="mx-auto max-w-7xl px-4">
-    <div class="flex items-center justify-between py-4">
+  <!-- Header -->
+  <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+    <div class="mx-auto max-w-7xl px-4 flex items-center justify-between py-4">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
       </a>
 
-      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html" class="nav-link hover:text-sky-400">Home</a>
-        <a href="core-strengths.html" class="nav-link hover:text-sky-400">Core Strengths</a>
-        <a href="founder.html" class="nav-link hover:text-sky-400">Founder</a>
-        <a href="manufacturers.html" class="nav-link hover:text-sky-400 font-semibold text-sky-400">For Manufacturers</a>
-        <a href="investors.html" class="nav-link hover:text-sky-400">For Investors</a>
-        <a href="process.html" class="nav-link hover:text-sky-400">Process</a>
-        <a href="credibility.html" class="nav-link hover:text-sky-400">Credibility</a>
-        <a href="case-studies.html" class="nav-link hover:text-sky-400">Case Studies</a>
-        <a href="faqs.html" class="nav-link hover:text-sky-400">FAQs</a>
-        <a href="contact.html" class="nav-link hover:text-sky-400">Contact</a>
-        <!-- Make it lively -->
-        <button type="button" class="ml-2 inline-flex items-center px-4 py-2 rounded-lg border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-neutral-900 transition btn-hover-scale"
-                onclick="openModal()" aria-haspopup="dialog" aria-controls="contactModal">
-          Talk to Us
-        </button>
+        <a href="index.html" class="hover:text-sky-400">Home</a>
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+        <a href="founder.html" class="hover:text-sky-400">Founder</a>
+        <a href="manufacturers.html" class="hover:text-sky-400 font-semibold text-sky-400">For Manufacturers</a>
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+        <a href="process.html" class="hover:text-sky-400">Process</a>
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
       </nav>
 
       <!-- Hamburger -->
-      <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
-              aria-label="Toggle navigation" onclick="toggleNav()">
-        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
-    <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
-      <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
-      <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
-      <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
-      <a href="manufacturers.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">For Manufacturers</a>
-      <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
-      <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
-      <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
-      <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
-      <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
-      <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
-      <button type="button" class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-lg border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-neutral-900 transition btn-hover-scale"
-              onclick="toggleNav(); openModal();">
-        Talk to Us
-      </button>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="py-20" id="mfg">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="flex items-end justify-between gap-6">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold title-reveal">For Manufacturers</h2>
-          <p class="mt-3 text-neutral-300 subtitle-reveal">“Your Installation‑Ready Infrastructure Partner” — we deliver bays on time and to spec, reducing after‑sales issues and protecting brand reputation.</p>
-        </div>
-        <button type="button" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-neutral-900 transition btn-hover-scale"
-                onclick="openModal()">
-          Talk to Us
-        </button>
-      </div>
-
-      <div class="mt-10 grid md:grid-cols-2 gap-6" id="step-cards-container">
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:0ms">
-          <h3 class="font-semibold">1) Civil Planning &amp; Pit Construction</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>Site‑ready bay drawings aligned with OEM footprints</li>
-            <li>Pit excavation &amp; construction to specified dimensions</li>
-            <li>Slope &amp; drainage level design for optimal water flow</li>
-            <li>Foundation setting for gantries, conveyors, and machinery</li>
-          </ul>
-        </div>
-
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:100ms">
-          <h3 class="font-semibold">2) MEP &amp; Utilities Setup</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>Plumbing: supply lines, high‑pressure feed, return loops</li>
-            <li>Oil traps &amp; water recycling units for eco‑compliance</li>
-            <li>Drainage channels &amp; floor slopes to prevent pooling</li>
-            <li>Electrical paneling &amp; automation cabling for safety/control</li>
-            <li>BIS safety compliance checks</li>
-          </ul>
-        </div>
-
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:200ms">
-          <h3 class="font-semibold">3) Equipment Integration</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>Installation &amp; alignment: wash, steam, vacuum, extraction, compressed air</li>
-            <li>Controls &amp; automation modules connection</li>
-            <li>Testing &amp; commissioning with water and power load simulations</li>
-          </ul>
-        </div>
-
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:300ms">
-          <h3 class="font-semibold">4) Interiors &amp; Branding</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>Industrial‑grade, chemical‑resistant flooring</li>
-            <li>Washable wall treatments and practical finishes</li>
-            <li>Lighting design for work efficiency and visual appeal</li>
-            <li>Brand asset implementation: signage, decals, customer displays</li>
-          </ul>
-        </div>
-
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:400ms">
-          <h3 class="font-semibold">5) Handover &amp; Documentation</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>As‑built drawings &amp; O&amp;M manuals</li>
-            <li>Basic operational training for client staff</li>
-          </ul>
-        </div>
-
-        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:500ms">
-          <h3 class="font-semibold">6) Post‑Completion Support</h3>
-          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-            <li>On‑call technical assistance</li>
-            <li>Periodic site inspections (preventive maintenance)</li>
-            <li>Support for upgrades and future expansions</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-</main>
-
-<section class="py-20 bg-neutral-900/40 border-t border-neutral-800">
-  <div class="mx-auto max-w-7xl px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8">🧠 Why Partner With Autostralis</h2>
-    <table class="w-full border-collapse" id="why-partner-table">
-      <tbody>
-        <tr class="border-b border-neutral-800 reveal-table-row" style="--d:0ms">
-          <td class="py-3 pr-4 align-top text-red-400">❌ Clients don’t know how to install</td>
-          <td class="py-3 pl-4 align-top text-green-400">✅ We manage A–Z: design, construction, and handover</td>
-        </tr>
-        <tr class="border-b border-neutral-800 reveal-table-row" style="--d:100ms">
-          <td class="py-3 pr-4 align-top text-red-400">❌ Drainage/slope errors delay projects</td>
-          <td class="py-3 pl-4 align-top text-green-400">✅ We plan it right from the start</td>
-        </tr>
-        <tr class="border-b border-neutral-800 reveal-table-row" style="--d:200ms">
-          <td class="py-3 pr-4 align-top text-red-400">❌ Bad construction affects your brand</td>
-          <td class="py-3 pl-4 align-top text-green-400">✅ We enhance your image with showroom-grade finish</td>
-        </tr>
-        <tr class="border-b border-neutral-800 reveal-table-row" style="--d:300ms">
-          <td class="py-3 pr-4 align-top text-red-400">❌ No service team on-site</td>
-          <td class="py-3 pl-4 align-top text-green-400">✅ We’re your local execution partner in South India</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<footer class="py-10 border-t border-neutral-800 mt-12">
-  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-    <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
-    <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
-      <a class="nav-link hover:text-sky-400" href="index.html">Home</a> •
-      <a class="nav-link hover:text-sky-400" href="core-strengths.html">Core Strengths</a> •
-      <a class="nav-link hover:text-sky-400" href="founder.html">Founder</a> •
-      <a class="nav-link hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> •
-      <a class="nav-link hover:text-sky-400" href="investors.html">For Investors</a> •
-      <a class="nav-link hover:text-sky-400" href="process.html">Process</a> •
-      <a class="nav-link hover:text-sky-400" href="credibility.html">Credibility</a> •
-      <a class="nav-link hover:text-sky-400" href="case-studies.html">Case Studies</a> •
-      <a class="nav-link hover:text-sky-400" href="faqs.html">FAQs</a> •
-      <a class="nav-link hover:text-sky-400" href="contact.html">Contact</a>
-    </nav>
-  </div>
-</footer>
-
-<!-- ================= Modal: Contact Form ================= -->
-<div id="contactOverlay" class="hidden fixed inset-0 z-[60] bg-black/60"></div>
-
-<div id="contactModal"
-      class="hidden fixed inset-0 z-[70] grid place-items-center px-4"
-      role="dialog" aria-modal="true" aria-labelledby="contactTitle">
-  <div class="modal-enter w-full max-w-lg rounded-2xl border border-neutral-800 bg-neutral-900/95 backdrop-blur p-6 shadow-2xl">
-    <div class="flex items-start justify-between">
-      <h3 id="contactTitle" class="text-xl font-semibold">Talk to Us</h3>
-      <button class="ml-3 inline-flex items-center justify-center w-9 h-9 rounded-lg border border-neutral-700 hover:border-neutral-500"
-              aria-label="Close contact form" onclick="closeModal()">
-        ✕
+      <button class="md:hidden grid place-items-center w-11 h-11 rounded-xl border border-neutral-800" aria-label="Open navigation" onclick="toggleNav()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
 
-    <p class="mt-2 text-neutral-300">Tell us a bit about your site. We’ll call you back.</p>
-
-    <form class="mt-4 grid gap-3" onsubmit="submitContact(event)">
-      <div class="grid gap-1">
-        <label class="text-sm text-neutral-300">Name</label>
-        <input required name="name" class="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 outline-none focus:border-sky-400" />
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-1 text-sm">
+        <a href="index.html" class="px-3 py-2 rounded hover:bg-neutral-800">Home</a>
+        <a href="core-strengths.html" class="px-3 py-2 rounded hover:bg-neutral-800">Core Strengths</a>
+        <a href="founder.html" class="px-3 py-2 rounded hover:bg-neutral-800">Founder</a>
+        <a href="manufacturers.html" class="px-3 py-2 rounded bg-neutral-800">For Manufacturers</a>
+        <a href="investors.html" class="px-3 py-2 rounded hover:bg-neutral-800">For Investors</a>
+        <a href="process.html" class="px-3 py-2 rounded hover:bg-neutral-800">Process</a>
+        <a href="credibility.html" class="px-3 py-2 rounded hover:bg-neutral-800">Credibility</a>
+        <a href="case-studies.html" class="px-3 py-2 rounded hover:bg-neutral-800">Case Studies</a>
+        <a href="faqs.html" class="px-3 py-2 rounded hover:bg-neutral-800">FAQs</a>
+        <a href="contact.html" class="px-3 py-2 rounded hover:bg-neutral-800">Contact</a>
       </div>
-      <div class="grid gap-1">
-        <label class="text-sm text-neutral-300">Phone</label>
-        <input required name="phone" pattern="[0-9+\-\s()]{6,}" class="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 outline-none focus:border-sky-400" />
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="flex items-end justify-between gap-6 reveal">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold">For Manufacturers</h1>
+            <p class="mt-3 text-neutral-300">“Your Installation-Ready Infrastructure Partner” — we deliver bays on time and to spec, reducing after-sales issues and protecting brand reputation.</p>
+          </div>
+          <a href="contact.html" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500 transition">Talk to Us</a>
+        </div>
       </div>
-      <div class="grid gap-1">
-        <label class="text-sm text-neutral-300">Email (optional)</label>
-        <input type="email" name="email" class="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 outline-none focus:border-sky-400" />
+    </section>
+
+    <!-- Why Partner -->
+    <section class="py-20 bg-neutral-900/40 border-y border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 reveal">Why Partner With Autostralis</h2>
+
+        <div class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Clients buy your machines without proper pit/bay layouts</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">We prepare OEM-aligned, installation-ready bays</p></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal" style="--d:80ms">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Wrong slope levels cause pooling & inefficient drainage</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">We design drainage & slope from day one</p></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal" style="--d:160ms">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Poor branding & interiors reduce customer experience</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">We deliver branded, showroom-grade finishes</p></div>
+          </div>
+        </div>
       </div>
-      <div class="grid gap-1">
-        <label class="text-sm text-neutral-300">Message</label>
-        <textarea name="message" rows="4" class="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 outline-none focus:border-sky-400" placeholder="Location, size, timelines…"></textarea>
+    </section>
+
+    <!-- Steps -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-6">
+        <article class="card p-6 reveal"><h3 class="font-semibold">Civil Planning & Pit Construction</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>OEM-aligned bay drawings</li><li>Pit excavation & construction</li><li>Slope & drainage level design</li><li>Foundation for equipment</li></ul></article>
+        <article class="card p-6 reveal" style="--d:80ms"><h3 class="font-semibold">MEP & Utilities</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>Water lines, oil traps, drainage</li><li>Electrical paneling & automation cabling</li><li>BIS safety compliance</li></ul></article>
+        <article class="card p-6 reveal" style="--d:160ms"><h3 class="font-semibold">Equipment Integration</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>Installation & alignment</li><li>Automation & control hookup</li><li>Testing & commissioning</li></ul></article>
+        <article class="card p-6 reveal" style="--d:240ms"><h3 class="font-semibold">Interiors & Branding</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>Durable flooring & wall finishes</li><li>Lighting design</li><li>Brand signage & displays</li></ul></article>
+        <article class="card p-6 reveal" style="--d:320ms"><h3 class="font-semibold">Handover & Documentation</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>As-built drawings</li><li>Operational training</li></ul></article>
+        <article class="card p-6 reveal" style="--d:400ms"><h3 class="font-semibold">Post-Completion Support</h3><ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1"><li>On-call assistance</li><li>Periodic inspections</li></ul></article>
       </div>
+    </section>
+  </main>
 
-      <div class="mt-2 flex flex-wrap gap-2">
-        <button type="submit" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-sky-500 text-neutral-900 font-semibold hover:bg-sky-400 btn-hover-scale">Send</button>
-        <a href="https://wa.me/919388666777" target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-green-500 text-green-400 hover:bg-green-500 hover:text-neutral-900 btn-hover-scale">
-          WhatsApp
-        </a>
-        <a href="tel:+919388666777"
-           class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-neutral-900 btn-hover-scale">
-          Call
-        </a>
-      </div>
-      <p id="contactNote" class="hidden text-sm text-green-400 mt-2">Thanks! We’ll get back to you shortly.</p>
-    </form>
-  </div>
-</div>
-<!-- ====================================================== -->
-
-<!-- Scripts -->
-<script>
-(() => {
-  // Original Reveal on scroll for step cards
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
-  }, {threshold:0.25});
-  document.addEventListener('DOMContentLoaded', ()=>{
-    document.querySelectorAll('#mfg .reveal').forEach(el=> io.observe(el));
-    document.querySelectorAll('.reveal-table-row').forEach(el=> tableIo.observe(el));
-  });
-
-  // NEW: Reveal on scroll for table rows
-  const tableIo = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('is-visible'); }
-    });
-  }, {threshold:0.5});
-
-  // NEW: Parallax effect for step cards
-  const cardsContainer = document.getElementById('step-cards-container');
-  if (cardsContainer) {
-    cardsContainer.addEventListener('mousemove', (e) => {
-      const cards = cardsContainer.querySelectorAll('.step-card');
-      const centerX = cardsContainer.offsetWidth / 2;
-      const centerY = cardsContainer.offsetHeight / 2;
-      const mouseX = e.clientX - cardsContainer.offsetLeft;
-      const mouseY = e.clientY - cardsContainer.offsetTop;
-
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const cardCenterX = rect.left + rect.width / 2;
-        const cardCenterY = rect.top + rect.height / 2;
-
-        const deltaX = (mouseX - cardCenterX) / card.offsetWidth;
-        const deltaY = (mouseY - cardCenterY) / card.offsetHeight;
-
-        const maxParallax = 10;
-        card.style.transform = `
-          translateY(-6px)
-          perspective(1000px)
-          rotateX(${deltaY * maxParallax * -1}deg)
-          rotateY(${deltaX * maxParallax}deg)
-        `;
-        card.style.transition = 'transform 0.1s ease-out';
-      });
-    });
-
-    cardsContainer.addEventListener('mouseleave', () => {
-      const cards = cardsContainer.querySelectorAll('.step-card');
-      cards.forEach(card => {
-        card.style.transform = '';
-        card.style.transition = 'transform 0.25s ease';
-      });
-    });
-  }
-})();
-
-// Modal controls + accessibility
-let lastFocused = null;
-
-function openModal(){
-  lastFocused = document.activeElement;
-  const overlay = document.getElementById('contactOverlay');
-  const modal = document.getElementById('contactModal');
-  overlay.classList.remove('hidden');
-  modal.classList.remove('hidden');
-
-  // enter animations
-  overlay.classList.add('fade-enter-active');
-  modal.querySelector('div.modal-enter').classList.add('modal-enter-active');
-
-  // lock scroll
-  document.documentElement.classList.add('overflow-hidden');
-  document.body.classList.add('overflow-hidden');
-
-  // focus first input
-  const firstInput = modal.querySelector('input[name="name"]');
-  setTimeout(()=> firstInput && firstInput.focus(), 50);
-}
-
-function closeModal(){
-  const overlay = document.getElementById('contactOverlay');
-  const modal = document.getElementById('contactModal');
-  overlay.classList.add('hidden');
-  modal.classList.add('hidden');
-
-  document.documentElement.classList.remove('overflow-hidden');
-  document.body.classList.remove('overflow-hidden');
-
-  if (lastFocused && typeof lastFocused.focus === 'function') {
-    lastFocused.focus();
-  }
-}
-
-// Close on overlay click / ESC
-document.getElementById('contactOverlay').addEventListener('click', closeModal);
-document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ closeModal(); } });
-
-// Very simple submit handler (replace with your backend later)
-function submitContact(e){
-  e.preventDefault();
-  const form = e.target;
-  // Here you can POST to your backend / Formspree / Sheet etc.
-  form.reset();
-  document.getElementById('contactNote').classList.remove('hidden');
-  setTimeout(closeModal, 1000);
-}
-</script>
+  <!-- Footer -->
+  <footer class="py-10 border-t border-neutral-800 mt-12">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+      <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+        <a href="index.html" class="hover:text-sky-400">Home</a> •
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a> •
+        <a href="founder.html" class="hover:text-sky-400">Founder</a> •
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a> •
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a> •
+        <a href="process.html" class="hover:text-sky-400">Process</a> •
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a> •
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a> •
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a> •
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
+    </div>
+  </footer>
 
 </body>
 </html>
