@@ -28,7 +28,11 @@
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
     .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
     .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
-  </style>
+  
+  .sheet { position:fixed; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); z-index:60 }
+  .sheet-panel { position:absolute; right:12px; top:12px; left:12px; border-radius:14px; background:#0b0b0b; border:1px solid rgba(255,255,255,.12) }
+
+</style>
 
   <script type="application/ld+json">
   {
@@ -67,52 +71,66 @@
 <body class="bg-neutral-950 text-neutral-100">
   <!-- Header -->
   <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="flex items-center justify-between py-4">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
-        </a>
-
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="hover:text-sky-400">Home</a>
-          <a href="core-strengths.html" class="hover:text-sky-400 font-semibold text-sky-400">Core Strengths</a>
-          <a href="founder.html" class="hover:text-sky-400">Founder</a>
-          <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
-          <a href="investors.html" class="hover:text-sky-400">For Investors</a>
-          <a href="process.html" class="hover:text-sky-400">Process</a>
-          <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
-          <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
-          <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
-          <a href="contact.html" class="hover:text-sky-400">Contact</a>
-        </nav>
-
-        <!-- Hamburger (mobile) -->
-        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
-                aria-label="Toggle navigation" onclick="toggleNav()">
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-            <path d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu panel -->
-    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
-      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
-        <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
-        <a href="core-strengths.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">Core Strengths</a>
-        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
-        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
-        <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
-        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
-        <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
-        <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
-        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-sky-400">Home</a>
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+        <a href="founder.html" class="hover:text-sky-400">Founder</a>
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+        <a href="process.html" class="hover:text-sky-400">Process</a>
+        <a href="credibility.html" class="hover:text-sky-400 font-semibold text-sky-400">Credibility</a>
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
       </nav>
+      <button onclick="toggleNav()" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
+
+<!-- Mobile sheet menu -->
+
+</div>
+
+<style>
+  .sheet {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(4px);
+    z-index: 60;
+  }
+  .sheet-panel {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    left: 12px;
+    border-radius: 14px;
+    background: #0b0b0b;
+    border: 1px solid rgba(255,255,255,.12);
+  }
+</style>
+
+<script>
+function toggleNav(){
+  const nav = document.getElementById('mobileNav');
+  nav.classList.toggle('hidden');
+  document.documentElement.classList.toggle('overflow-hidden', !nav.classList.contains('hidden'));
+  document.body.classList.toggle('overflow-hidden', !nav.classList.contains('hidden'));
+}
+</script>
+
+<!-- Mobile sheet -->
+  
 
   <main>
     <!-- Stats -->
