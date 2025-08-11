@@ -1,277 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>For Investors – Autostralis</title>
-<meta name="description" content="Autostralis is a premium automotive infrastructure partner delivering turnkey car wash & detailing facilities from bare space to business-ready launch across Tamil Nadu, Kerala, and Karnataka."/>
-<meta name="author" content="Autostralis"/>
-<meta property="og:title" content="Autostralis – Turnkey Car Wash & Detailing Infrastructure"/>
-<meta property="og:description" content="Installation-ready sites for manufacturers and turnkey studios for investors. Civil, MEP, integration, interiors, branding, SOPs."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.autostralis.com"/>
-<meta property="og:image" content="https://www.autostralis.com/og-image.jpg"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>For Investors – Autostralis</title>
+  <meta name="description" content="Premium, brand‑consistent detailing studios for investors, entrepreneurs, and franchise owners. From bare land to brand‑perfect launch."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial}
+    /* Mobile hamburger panel */
+    #mobileNav{transition:max-height .3s ease; overflow:hidden}
+    #mobileNav.hidden{max-height:0}
+    #mobileNav.show{max-height:520px}
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-<link rel="icon" href="assets/favicon.ico?v=2">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+    /* Global reveal (same as process.html vibe) */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; transition-delay:var(--d,0ms)}
+    .reveal.is-visible{opacity:1; transform:none}
 
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-  /* ===== Investors — Pro Animations ===== */
-  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
-  #investors .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; transition-delay: var(--d, 0ms); }
-  #investors .reveal.is-visible{ opacity:1; transform: translateY(0); animation: fadeUp .6s ease both; }
-  #investors .step-card{ position:relative; overflow:hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  #investors .step-card:hover{ transform: translateY(-6px); box-shadow: 0 14px 36px rgba(56,189,248,.25); border-color: rgba(56,189,248,.45); }
-  #investors .step-card::before{ content:""; position:absolute; inset:0; padding:1px; border-radius: 16px; background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8); background-size:200% 200%; opacity:0; transition:opacity .25s ease; pointer-events:none; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
-  #investors .step-card:hover::before{ opacity:1; animation: borderSweep 3s linear infinite; }
-  @keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
-  #investors .step-card ul li{ opacity:0; transform: translateY(8px); }
-  #investors .step-card.is-visible ul li{ animation: fadeUp .5s ease forwards; }
-  #investors .step-card.is-visible ul li:nth-child(1){ animation-delay:.1s; }
-  #investors .step-card.is-visible ul li:nth-child(2){ animation-delay:.2s; }
-  #investors .step-card.is-visible ul li:nth-child(3){ animation-delay:.3s; }
-  #investors .step-card.is-visible ul li:nth-child(4){ animation-delay:.4s; }
-  #investors .pain-solution table{ width:100%; border-collapse: collapse; }
-  #investors .pain-solution td{ padding:12px 14px; border-bottom:1px solid rgba(120,120,120,.25); }
-  #investors .pain-solution td:first-child{ color:#f87171; }
-  #investors .pain-solution td:last-child{ color:#34d399; }
+    /* Card hover + gradient border sweep (site style) */
+    .card{
+      position:relative; overflow:hidden;
+      border:1px solid rgba(120,120,120,.25);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover{transform:translateY(-6px); border-color:rgba(56,189,248,.45); box-shadow:0 14px 36px rgba(56,189,248,.2)}
+    .card::before{
+      content:""; position:absolute; inset:0; padding:1px; border-radius:16px;
+      background:linear-gradient(120deg,#38bdf8,#0ea5e9,#38bdf8); background-size:200% 200%;
+      opacity:0; transition:opacity .25s ease; pointer-events:none;
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+    }
+    .card:hover::before{opacity:1; animation:borderSweep 3s linear infinite}
+    @keyframes borderSweep{0%{background-position:0 50%}100%{background-position:200% 50%}}
 
-  /* Sticky bottom CTA — mobile only */
-  @media (max-width: 767.98px){
-    .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(12,12,12,.92); backdrop-filter: blur(8px); border-top: 1px solid rgba(120,120,120,.25); display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px env(safe-area-inset-bottom); }
-    body { padding-bottom: 70px; }
-  }
-  .sticky-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; text-decoration: none; padding: 12px; border-radius: 12px; }
-  .sticky-cta .cta-primary { background:#38bdf8; color:#0b0b0b; }
-  .sticky-cta .cta-secondary { border:1px solid #a3a3a3; color:#e5e5e5; }
+    /* “Why partner” split rows */
+    .neg{border-color:rgba(248,113,113,.35); background:rgba(127,29,29,.35)}
+    .pos{border-color:rgba(34,197,94,.35); background:rgba(20,83,45,.35)}
+  </style>
 
-  /* Floating Action Button (contact dock) */
-  .fab-dock{ position: fixed; right: 16px; bottom: 88px; z-index: 60; display: flex; flex-direction: column; gap: 10px; }
-  .fab-dock a{ width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; text-decoration: none; background: #0f172a; border:1px solid rgba(255,255,255,.12); box-shadow: 0 10px 24px rgba(0,0,0,.35); transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; }
-  .fab-dock a:hover{ transform: translateY(-2px) scale(1.06); box-shadow: 0 16px 36px rgba(56,189,248,.25); border-color: rgba(56,189,248,.45); filter: saturate(1.05); }
-  .fab-wa { background:#25D366; color:#fff; } .fab-call { background:#0ea5e9; color:#fff; }
-  .fab-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color:#fff; }
-  .fab-dock svg{ width:24px; height:24px; display:block; }
+  <script>
+    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
 
-  /* Claim badge */
-  .claim-highlight{ position: relative; overflow: hidden; border-radius: 16px; background: rgba(17,17,17,0.55); color: #e5e7eb; font-weight: 600; text-align: center; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px); box-shadow: 0 10px 24px rgba(0,0,0,.25); display: inline-block; }
-  .claim-highlight .text{ color:#fafafa; }
-  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-  @keyframes fadeInUp { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }
-  .claim-reveal{ animation: fadeInUp .6s ease-out both, floaty 3s ease-in-out infinite; }
-
-  /* Client logos shine */
-  .logo-wrap { position: relative; overflow: hidden; }
-  .logo-wrap img { width: 100%; height: auto; display: block; }
-  .logo-wrap::after { content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); }
-  .logo-wrap.visible { opacity: 1; transform: scale(1); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .logo-wrap.visible::after { animation: shine 1.2s ease forwards; }
-  @keyframes shine { 100% { left: 125%; } }
-</style>
-
-<script>
-  // Mobile nav toggle (same as other pages)
-  function toggleNav(){
-    const m = document.getElementById('mobileNav');
-    const nowHidden = m.classList.toggle('hidden');
-    const open = !nowHidden;
-    document.documentElement.classList.toggle('overflow-hidden', open);
-    document.body.classList.toggle('overflow-hidden', open);
-  }
-</script>
+    // IntersectionObserver reveal (same cadence as other pages)
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const io = new IntersectionObserver((ents)=>{
+        ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+      }, {threshold:.22});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    });
+  </script>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100">
-  <!-- Header -->
+
+  <!-- Header (Black template + hamburger) -->
   <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="flex items-center justify-between py-4">
-        <a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;"></a>
+    <div class="mx-auto max-w-7xl px-4 flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
+      </a>
 
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="hover:text-sky-400">Home</a>
-          <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
-          <a href="founder.html" class="hover:text-sky-400">Founder</a>
-          <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
-          <a href="investors.html" class="hover:text-sky-400 font-semibold text-sky-400">For Investors</a>
-          <a href="process.html" class="hover:text-sky-400">Process</a>
-          <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
-          <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
-          <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
-          <a href="contact.html" class="hover:text-sky-400">Contact</a>
-        </nav>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-sky-400">Home</a>
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+        <a href="founder.html" class="hover:text-sky-400">Founder</a>
+        <a href="manufacturers.html" class="hover:text-sky-400">For Manufacturers</a>
+        <a href="investors.html" class="hover:text-sky-400 font-semibold text-sky-400">For Investors</a>
+        <a href="process.html" class="hover:text-sky-400">Process</a>
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
 
-        <!-- Hamburger -->
-        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
-                aria-label="Toggle navigation" onclick="toggleNav()">
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
-            <path d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
+      <!-- Hamburger -->
+      <button class="md:hidden grid place-items-center w-11 h-11 rounded-xl border border-neutral-800" aria-label="Open navigation" onclick="toggleNav()">
+        <span class="sr-only">Menu</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
-      <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
-        <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
-        <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
-        <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
-        <a href="manufacturers.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Manufacturers</a>
-        <a href="investors.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">For Investors</a>
-        <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
-        <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
-        <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
-        <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
-      </nav>
+    <!-- Mobile panel -->
+    <div id="mobileNav" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-1 text-sm">
+        <a href="index.html" class="px-3 py-2 rounded hover:bg-neutral-800">Home</a>
+        <a href="core-strengths.html" class="px-3 py-2 rounded hover:bg-neutral-800">Core Strengths</a>
+        <a href="founder.html" class="px-3 py-2 rounded hover:bg-neutral-800">Founder</a>
+        <a href="manufacturers.html" class="px-3 py-2 rounded hover:bg-neutral-800">For Manufacturers</a>
+        <a href="investors.html" class="px-3 py-2 rounded bg-neutral-800">For Investors</a>
+        <a href="process.html" class="px-3 py-2 rounded hover:bg-neutral-800">Process</a>
+        <a href="credibility.html" class="px-3 py-2 rounded hover:bg-neutral-800">Credibility</a>
+        <a href="case-studies.html" class="px-3 py-2 rounded hover:bg-neutral-800">Case Studies</a>
+        <a href="faqs.html" class="px-3 py-2 rounded hover:bg-neutral-800">FAQs</a>
+        <a href="contact.html" class="px-3 py-2 rounded hover:bg-neutral-800">Contact</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Top -->
-    <section id="investors" class="py-20 bg-neutral-900/40 border-y border-neutral-800">
+    <!-- Intro -->
+    <section class="py-20">
       <div class="mx-auto max-w-7xl px-4">
-        <div class="flex items-end justify-between gap-6">
+        <div class="flex items-end justify-between gap-6 reveal">
           <div>
-            <h2 class="text-3xl md:text-4xl font-bold">For Investors</h2>
+            <h1 class="text-3xl md:text-4xl font-bold">For Investors</h1>
             <p class="mt-3 text-neutral-300">“From Bare Land to Grand Opening” — premium, brand‑consistent detailing studios for investors, entrepreneurs, and franchise owners.</p>
           </div>
-          <a class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500" href="#contact">Start a Project</a>
+          <a href="contact.html" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500 transition">Start a Project</a>
         </div>
 
-        <div class="mt-6 flex justify-center">
-          <div class="mt-6 claim-reveal claim-highlight">
-            <div class="text">⭐ Autostralis is India’s only end-to-end automotive infrastructure company — from bare land to brand‑perfect launch.</div>
+        <div class="mt-6 reveal" style="--d:100ms">
+          <div class="inline-block rounded-2xl px-4 py-3 border border-white/15 bg-neutral-900/50 backdrop-blur">
+            <span class="font-semibold text-neutral-100">★</span>
+            <span class="text-neutral-200">Autostralis is India’s only end‑to‑end automotive infrastructure company — from bare land to brand‑perfect launch.</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Steps grid -->
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:0ms">
-            <h3 class="font-semibold">1) Feasibility &amp; Approvals</h3>
+    <!-- Why Partner (modern, animated, matched spacing) -->
+    <section class="py-20 bg-neutral-900/40 border-y border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 reveal">Why Partner With Autostralis</h2>
+
+        <div class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Clients don’t know how to install</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">We manage A–Z: design, construction, and handover</p></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal" style="--d:80ms">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Drainage/slope errors delay projects</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">We plan it right from the start</p></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal" style="--d:160ms">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">Bad construction affects your brand</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">Showroom‑grade finish that lifts your image</p></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 items-stretch reveal" style="--d:240ms">
+            <div class="card neg p-5 flex gap-3"><span class="text-red-400 text-xl">✘</span><p class="text-red-200/90">No service team on‑site</p></div>
+            <div class="card pos p-5 flex gap-3"><span class="text-green-400 text-xl">✔</span><p class="text-green-100/90">Local execution partner in South India</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Investors Steps (kept concise; same hover/reveal cadence) -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="card p-6 reveal" style="--d:0ms">
+            <h3 class="font-semibold">Feasibility & Approvals</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
               <li>Site inspection: utilities, access, zoning</li>
-              <li>Authority approvals guidance &amp; liaison support</li>
+              <li>Authority approvals guidance & liaison</li>
             </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:100ms">
-            <h3 class="font-semibold">2) Concept Design &amp; 3D Planning</h3>
+          </article>
+          <article class="card p-6 reveal" style="--d:80ms">
+            <h3 class="font-semibold">Concept Design & 3D Planning</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Workflow‑first space layouts</li>
-              <li>3D renders for investor &amp; franchise approvals</li>
-              <li>Brand colorways, logos, signage integration</li>
+              <li>Workflow‑first layouts</li>
+              <li>3D renders for investor/franchise approvals</li>
+              <li>Brand colorways & signage integration</li>
             </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:200ms">
-            <h3 class="font-semibold">3) Civil Construction</h3>
+          </article>
+          <article class="card p-6 reveal" style="--d:160ms">
+            <h3 class="font-semibold">Civil Construction</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Pit construction &amp; drainage alignment</li>
-              <li>Structural mods for back‑of‑house &amp; customer areas</li>
+              <li>Pits & drainage aligned to spec</li>
               <li>Anti‑slip, chemical‑resistant flooring</li>
+              <li>BOH & customer area mods</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:300ms">
-            <h3 class="font-semibold">4) MEP &amp; Drainage Setup</h3>
+          <article class="card p-6 reveal" style="--d:240ms">
+            <h3 class="font-semibold">MEP & Drainage</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Water supply systems, tanks, oil traps</li>
-              <li>Drainage channels for efficient outflow</li>
-              <li>Electrical wiring, panels, and lighting circuits</li>
+              <li>Water systems, tanks, oil traps</li>
+              <li>Drainage channels & gradients</li>
+              <li>Electrical panels & lighting</li>
             </ul>
-          </div>
+          </article>
+          <article class="card p-6 reveal" style="--d:320ms">
+            <h3 class="font-semibold">Equipment Integration</h3>
+            <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+              <li>Wash, vacuum, steam, compressed air</li>
+              <li>Connections & live testing</li>
+            </ul>
+          </article>
+          <article class="card p-6 reveal" style="--d:400ms">
+            <h3 class="font-semibold">Interior & Branding</h3>
+            <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+              <li>Task lighting & acoustic touches</li>
+              <li>Premium finishes & brand assets</li>
+            </ul>
+          </article>
 
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:400ms">
-            <h3 class="font-semibold">5) Equipment Integration</h3>
+          <article class="card p-6 reveal" style="--d:480ms">
+            <h3 class="font-semibold">Testing & QA</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Wash bays, vacuum bays, steam &amp; extraction systems</li>
-              <li>Compressed air and water line connections</li>
-              <li>Live testing for peak efficiency</li>
+              <li>Water‑flow & leak tests</li>
+              <li>Electrical safety & load checks</li>
             </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:500ms">
-            <h3 class="font-semibold">6) Interior Finishing &amp; Branding</h3>
+          </article>
+          <article class="card p-6 reveal" style="--d:560ms">
+            <h3 class="font-semibold">Training & SOPs</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Lighting optimization for detailing work</li>
-              <li>Acoustic treatments for enclosed bays</li>
-              <li>Premium wall finishes &amp; customer lounge</li>
-              <li>Brand signage and display integration</li>
+              <li>Operations, safety, customer flow</li>
+              <li>Maintenance routines</li>
             </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:600ms">
-            <h3 class="font-semibold">7) Testing &amp; Quality Checks</h3>
+          </article>
+          <article class="card p-6 reveal" style="--d:640ms">
+            <h3 class="font-semibold">Post‑Completion Support</h3>
             <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Trial runs with vehicles</li>
-              <li>Drainage/water‑flow testing</li>
-              <li>Electrical safety verification</li>
+              <li>On‑call assistance & periodic checks</li>
+              <li>Upgrades and expansion support</li>
             </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:700ms">
-            <h3 class="font-semibold">8) Staff Training &amp; SOPs</h3>
-            <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Hands‑on machine operations &amp; safety</li>
-              <li>Customer service workflows</li>
-              <li>Maintenance &amp; cleaning routines</li>
-            </ul>
-          </div>
-
-          <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style="--d:800ms">
-            <h3 class="font-semibold">9) Post‑Completion Support</h3>
-            <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-              <li>Maintenance plans &amp; service schedules</li>
-              <li>Support for adding more bays/services</li>
-            </ul>
-          </div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Pain → Solution table -->
-        <div class="pain-solution mt-12 p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 reveal">
-          <h3 class="font-semibold text-xl">🧠 Why Invest with Autostralis</h3>
-          <table><tbody>
-            <tr><td>❌ No in‑house build expertise</td><td>✅ Turnkey delivery: design → construction → handover</td></tr>
-            <tr><td>❌ Delays from drainage/slope mistakes</td><td>✅ OEM‑aligned pits &amp; correct slopes from day one</td></tr>
-            <tr><td>❌ Inconsistent finish hurts brand</td><td>✅ Showroom‑grade interiors &amp; lighting</td></tr>
-            <tr><td>❌ Hard to manage multiple vendors</td><td>✅ Single accountable partner with clear timelines</td></tr>
-            <tr><td>❌ No post‑handover support</td><td>✅ On‑call assistance + preventive checks</td></tr>
-          </tbody></table>
+    <!-- Clients -->
+    <section class="py-16 border-t border-neutral-800 bg-neutral-900/40">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 reveal">Clients & Partners</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center reveal" style="--d:120ms">
+          <img src="assets/Picture1.png"  class="max-h-16 object-contain mx-auto" alt="Client 1">
+          <img src="assets/Picture2.png"  class="max-h-16 object-contain mx-auto" alt="Client 2">
+          <img src="assets/Picture3.png"  class="max-h-16 object-contain mx-auto" alt="Client 3">
+          <img src="assets/Picture4.png"  class="max-h-16 object-contain mx-auto" alt="Client 4">
+          <img src="assets/Picture5.png"  class="max-h-16 object-contain mx-auto" alt="Client 5">
+          <img src="assets/Picture6.png"  class="max-h-16 object-contain mx-auto" alt="Client 6">
+          <img src="assets/Picture7.png"  class="max-h-16 object-contain mx-auto" alt="Client 7">
+          <img src="assets/Picture8.png"  class="max-h-16 object-contain mx-auto" alt="Client 8">
+          <img src="assets/Picture9.png"  class="max-h-16 object-contain mx-auto" alt="Client 9">
+          <img src="assets/Picture10.png" class="max-h-16 object-contain mx-auto" alt="Client 10">
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Clients -->
-  <section id="clients" class="py-16 border-t border-neutral-800 bg-neutral-900/40">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">Clients &amp; Partners</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture1.png"  alt="Client 1"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture2.png"  alt="Client 2"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture3.png"  alt="Client 3"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture4.png"  alt="Client 4"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture5.png"  alt="Client 5"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture6.png"  alt="Client 6"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture7.png"  alt="Client 7"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture8.png"  alt="Client 8"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture9.png"  alt="Client 9"  class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture10.png" alt="Client 10" class="max-h-16 object-contain mx-auto"/></div>
-        <div class="logo-wrap opacity-0 transform scale-95"><img src="assets/Picture11.png" alt="Client 11" class="max-h-16 object-contain mx-auto"/></div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="py-10 border-t border-neutral-800 mt-12">
@@ -292,75 +267,5 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA -->
-  <div class="sticky-cta md:hidden">
-    <a aria-label="Start a Project" class="cta-primary" href="contact.html">Start a Project</a>
-    <a aria-label="Call Us" class="cta-secondary" href="tel:+919388666777">Call Us</a>
-  </div>
-
-  <!-- FAB dock -->
-  <div class="fab-dock">
-    <a aria-label="WhatsApp us" class="fab-wa" href="https://wa.me/919388666777" rel="noopener" target="_blank">
-      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16.5 13.5c-.2 0-.5 0-.7-.1s-.5-.1-.7.1c-.2.2-.6.7-.8.8-.1.1-.2.1-.4 0-.9-.4-1.8-.9-2.5-1.6s-1.2-1.6-1.6-2.5c-.1-.1-.1-.3 0-.4.1-.2.6-.6.8-.8.2-.2.2-.5.1-.7s-.5-1.2-.6-1.5c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.7.7-1.1 1.6-1.1 2.6 0 .7.2 1.4.5 2 .7 1.5 1.8 2.9 3.2 3.9 1 .8 2.1 1.4 3.4 1.7.4.1.8.1 1.1.1 1 0 1.9-.4 2.6-1.1.2-.2.3-.5.3-.7v-.6c0-.2 0-.5-.5-.7-.3-.1-1.2-.5-1.5-.6Z"></path><path d="M9.5 20.5 6 21l.5-3.5A8.5 8.5 0 1 1 12 20.5a8.4 8.4 0 0 1-2.5-.4z"></path></svg>
-    </a>
-    <a aria-label="Call us" class="fab-call" href="tel:+919388666777">
-      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.6 19.6 0 0 1-8.54-3.12 19.3 19.3 0 0 1-6-6A19.6 19.6 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h2a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.45-1.32a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg>
-    </a>
-    <a aria-label="Instagram" class="fab-ig" href="https://instagram.com/autostralis" rel="noopener" target="_blank">
-      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="5" ry="5" width="18" x="3" y="3"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"></line></svg>
-    </a>
-  </div>
-
-  <!-- Reveal scripts -->
-  <script>
-  (() => {
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('is-visible');
-          // animate list items inside
-          if(e.target.classList.contains('step-card')){
-            e.target.classList.add('is-visible');
-          }
-        }
-      });
-    }, {threshold:0.25});
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('#investors .reveal').forEach(el=> io.observe(el));
-    });
-  })();
-  </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const el = document.querySelector('.claim-highlight.claim-reveal');
-    if(!el) return;
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          el.classList.add('is-visible','shine');
-          setTimeout(()=>el.classList.remove('shine'), 1200);
-          io.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    io.observe(el);
-  });
-  </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const wraps = document.querySelectorAll('.logo-wrap');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    wraps.forEach(wrap => io.observe(wrap));
-  });
-  </script>
 </body>
 </html>
