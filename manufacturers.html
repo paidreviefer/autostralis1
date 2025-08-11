@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -16,198 +15,275 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
+
+<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/favicon.ico?v=2" rel="icon"/>
+<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+
 <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
-    .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
-  </style>
-<script>
-    // Mobile nav toggle
-    function toggleNav(){ document.getElementById('mobileNav').classList.toggle('hidden'); }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Autostralis",
-    "url": "https://www.autostralis.com",
-    "logo": "https://www.autostralis.com/logo.png",
-    "sameAs": [],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9388666777",
-      "contactType": "customer service",
-      "email": "contact@autostralis.com"
-    }],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Mangalathu Group"
-    }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+  .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.08); }
+  .grid-bg { background-image: linear-gradient(rgba(120,120,120,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(120,120,120,.12) 1px, transparent 1px); background-size: 20px 20px; }
+
+  /* ===== For Manufacturers — Pro Animations ===== */
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+
+  #mfg .reveal{
+    opacity:0; transform: translateY(16px);
+    transition: opacity .6s ease, transform .6s ease;
+    transition-delay: var(--d, 0ms);
   }
-  </script>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
-<style>
-/* ===== For Manufacturers — Pro Animations ===== */
-@keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+  #mfg .reveal.is-visible{
+    opacity:1; transform: translateY(0);
+    animation: fadeUp .6s ease both;
+  }
 
-#mfg .reveal{
-  opacity:0; transform: translateY(16px);
-  transition: opacity .6s ease, transform .6s ease;
-  transition-delay: var(--d, 0ms);
-}
-#mfg .reveal.is-visible{
-  opacity:1; transform: translateY(0);
-  animation: fadeUp .6s ease both;
-}
+  #mfg .step-card{
+    position:relative; overflow:hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  #mfg .step-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(56,189,248,.25);
+    border-color: rgba(56,189,248,.45);
+  }
 
-#mfg .step-card{
-  position:relative; overflow:hidden;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-#mfg .step-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(56,189,248,.25);
-  border-color: rgba(56,189,248,.45);
-}
+  /* Gradient border sweep on hover */
+  #mfg .step-card::before{
+    content:""; position:absolute; inset:0; padding:1px; border-radius: 16px;
+    background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
+    background-size:200% 200%;
+    opacity:0; transition:opacity .25s ease; pointer-events:none;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  #mfg .step-card:hover::before{
+    opacity:1; animation: borderSweep 3s linear infinite;
+  }
+  @keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
 
-/* Gradient border sweep on hover */
-#mfg .step-card::before{
-  content:""; position:absolute; inset:0; padding:1px; border-radius: 16px;
-  background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
-  background-size:200% 200%;
-  opacity:0; transition:opacity .25s ease; pointer-events:none;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-}
-#mfg .step-card:hover::before{
-  opacity:1; animation: borderSweep 3s linear infinite;
-}
-@keyframes borderSweep { 0%{background-position:0 50%} 100%{background-position:200% 50%} }
+  /* Bullet cascade */
+  #mfg .step-card ul li{ opacity:0; transform: translateY(8px); }
+  #mfg .step-card.is-visible ul li{ animation: fadeUp .5s ease forwards; }
+  #mfg .step-card.is-visible ul li:nth-child(1){ animation-delay:.1s; }
+  #mfg .step-card.is-visible ul li:nth-child(2){ animation-delay:.2s; }
+  #mfg .step-card.is-visible ul li:nth-child(3){ animation-delay:.3s; }
+  #mfg .step-card.is-visible ul li:nth-child(4){ animation-delay:.4s; }
+  #mfg .step-card.is-visible ul li:nth-child(5){ animation-delay:.5s; }
+</style>
 
-/* Bullet cascade */
-#mfg .step-card ul li{
-  opacity:0; transform: translateY(8px);
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Autostralis",
+  "url": "https://www.autostralis.com",
+  "logo": "https://www.autostralis.com/logo.png",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+91-9388666777",
+    "contactType": "customer service",
+    "email": "contact@autostralis.com"
+  }],
+  "parentOrganization": { "@type": "Organization", "name": "Mangalathu Group" }
 }
-#mfg .step-card.is-visible ul li{
-  animation: fadeUp .5s ease forwards;
-}
-#mfg .step-card.is-visible ul li:nth-child(1){ animation-delay:.1s; }
-#mfg .step-card.is-visible ul li:nth-child(2){ animation-delay:.2s; }
-#mfg .step-card.is-visible ul li:nth-child(3){ animation-delay:.3s; }
-#mfg .step-card.is-visible ul li:nth-child(4){ animation-delay:.4s; }
-#mfg .step-card.is-visible ul li:nth-child(5){ animation-delay:.5s; }
-</style></head>
+</script>
+</head>
+
 <title>For Manufacturers – Autostralis</title>
-<link href="assets/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.ico?v=2" rel="icon"/>
-<link href="assets/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+
 <body class="bg-neutral-950 text-neutral-100">
+
+<!-- Mobile nav toggle (same behavior as Black template) -->
+<script>
+  function toggleNav(){
+    const m = document.getElementById('mobileNav');
+    const nowHidden = m.classList.toggle('hidden');
+    const open = !nowHidden;
+    document.documentElement.classList.toggle('overflow-hidden', open);
+    document.body.classList.toggle('overflow-hidden', open);
+  }
+</script>
+
 <header class="sticky top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-<div class="mx-auto max-w-7xl px-4">
-<div class="flex items-center justify-between py-4">
-<a class="flex items-center gap-3" href="index.html"><img alt="Autostralis Logo" src="assets/logo.png" style="height:40px; width:auto; display:block;"/></a>
-<nav class="hidden md:flex items-center gap-6 text-sm">
-<a class="hover:text-sky-400" href="index.html">Home</a>
-<a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a>
-<a class="hover:text-sky-400" href="founder.html">Founder</a>
-<a class="hover:text-sky-400 font-semibold text-sky-400" href="manufacturers.html">For Manufacturers</a>
-<a class="hover:text-sky-400" href="investors.html">For Investors</a>
-<a class="hover:text-sky-400" href="process.html">Process</a>
-<a class="hover:text-sky-400" href="credibility.html">Credibility</a>
-<a class="hover:text-sky-400" href="case-studies.html">Case Studies</a>
-<a class="hover:text-sky-400" href="faqs.html">FAQs</a>
-<a class="hover:text-sky-400" href="contact.html">Contact</a>
-</nav>
-</div>
-</div>
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Autostralis Logo" style="height:40px; width:auto; display:block;">
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-sky-400">Home</a>
+        <a href="core-strengths.html" class="hover:text-sky-400">Core Strengths</a>
+        <a href="founder.html" class="hover:text-sky-400">Founder</a>
+        <a href="manufacturers.html" class="hover:text-sky-400 font-semibold text-sky-400">For Manufacturers</a>
+        <a href="investors.html" class="hover:text-sky-400">For Investors</a>
+        <a href="process.html" class="hover:text-sky-400">Process</a>
+        <a href="credibility.html" class="hover:text-sky-400">Credibility</a>
+        <a href="case-studies.html" class="hover:text-sky-400">Case Studies</a>
+        <a href="faqs.html" class="hover:text-sky-400">FAQs</a>
+        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      </nav>
+
+      <!-- Hamburger -->
+      <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 text-neutral-200"
+              aria-label="Toggle navigation" onclick="toggleNav()">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileNav" class="hidden md:hidden bg-neutral-950/95 border-t border-neutral-800">
+    <nav class="mx-auto max-w-7xl px-4 py-3 grid gap-2 text-sm">
+      <a href="index.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Home</a>
+      <a href="core-strengths.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Core Strengths</a>
+      <a href="founder.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Founder</a>
+      <a href="manufacturers.html" class="py-2 hover:text-sky-400 font-semibold text-sky-400" onclick="toggleNav()">For Manufacturers</a>
+      <a href="investors.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">For Investors</a>
+      <a href="process.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Process</a>
+      <a href="credibility.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Credibility</a>
+      <a href="case-studies.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Case Studies</a>
+      <a href="faqs.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">FAQs</a>
+      <a href="contact.html" class="py-2 hover:text-sky-400" onclick="toggleNav()">Contact</a>
+    </nav>
+  </div>
 </header>
+
 <main>
-<section class="py-20" id="mfg">
-<div class="mx-auto max-w-7xl px-4">
-<div class="flex items-end justify-between gap-6">
-<div>
-<h2 class="text-3xl md:text-4xl font-bold">For Manufacturers</h2>
-<p class="mt-3 text-neutral-300">“Your Installation‑Ready Infrastructure Partner” — we deliver bays on time and to spec, reducing after‑sales issues and protecting brand reputation.</p>
-</div>
-<a class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500" href="#contact">Talk to Us</a>
-</div>
-<div class="mt-10 grid md:grid-cols-2 gap-6">
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:0ms">
-<h3 class="font-semibold">1) Civil Planning &amp; Pit Construction</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>Site‑ready bay drawings aligned with OEM footprints</li>
-<li>Pit excavation &amp; construction to specified dimensions</li>
-<li>Slope &amp; drainage level design for optimal water flow</li>
-<li>Foundation setting for gantries, conveyors, and machinery</li>
-</ul>
-</div>
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:100ms">
-<h3 class="font-semibold">2) MEP &amp; Utilities Setup</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>Plumbing: supply lines, high‑pressure feed, return loops</li>
-<li>Oil traps &amp; water recycling units for eco‑compliance</li>
-<li>Drainage channels &amp; floor slopes to prevent pooling</li>
-<li>Electrical paneling &amp; automation cabling for safety/control</li>
-<li>BIS safety compliance checks</li>
-</ul>
-</div>
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:200ms">
-<h3 class="font-semibold">3) Equipment Integration</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>Installation &amp; alignment: wash, steam, vacuum, extraction, compressed air</li>
-<li>Controls &amp; automation modules connection</li>
-<li>Testing &amp; commissioning with water and power load simulations</li>
-</ul>
-</div>
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:300ms">
-<h3 class="font-semibold">4) Interiors &amp; Branding</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>Industrial‑grade, chemical‑resistant flooring</li>
-<li>Washable wall treatments and practical finishes</li>
-<li>Lighting design for work efficiency and visual appeal</li>
-<li>Brand asset implementation: signage, decals, customer displays</li>
-</ul>
-</div>
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:400ms">
-<h3 class="font-semibold">5) Handover &amp; Documentation</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>As‑built drawings &amp; O&amp;M manuals</li>
-<li>Basic operational training for client staff</li>
-</ul>
-</div>
-<div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:500ms">
-<h3 class="font-semibold">6) Post‑Completion Support</h3>
-<ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
-<li>On‑call technical assistance</li>
-<li>Periodic site inspections (preventive maintenance)</li>
-<li>Support for upgrades and future expansions</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+  <section class="py-20" id="mfg">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold">For Manufacturers</h2>
+          <p class="mt-3 text-neutral-300">“Your Installation‑Ready Infrastructure Partner” — we deliver bays on time and to spec, reducing after‑sales issues and protecting brand reputation.</p>
+        </div>
+        <a class="hidden md:inline-flex px-4 py-2 rounded-lg border border-neutral-700 hover:border-neutral-500" href="#contact">Talk to Us</a>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:0ms">
+          <h3 class="font-semibold">1) Civil Planning &amp; Pit Construction</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>Site‑ready bay drawings aligned with OEM footprints</li>
+            <li>Pit excavation &amp; construction to specified dimensions</li>
+            <li>Slope &amp; drainage level design for optimal water flow</li>
+            <li>Foundation setting for gantries, conveyors, and machinery</li>
+          </ul>
+        </div>
+
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:100ms">
+          <h3 class="font-semibold">2) MEP &amp; Utilities Setup</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>Plumbing: supply lines, high‑pressure feed, return loops</li>
+            <li>Oil traps &amp; water recycling units for eco‑compliance</li>
+            <li>Drainage channels &amp; floor slopes to prevent pooling</li>
+            <li>Electrical paneling &amp; automation cabling for safety/control</li>
+            <li>BIS safety compliance checks</li>
+          </ul>
+        </div>
+
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:200ms">
+          <h3 class="font-semibold">3) Equipment Integration</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>Installation &amp; alignment: wash, steam, vacuum, extraction, compressed air</li>
+            <li>Controls &amp; automation modules connection</li>
+            <li>Testing &amp; commissioning with water and power load simulations</li>
+          </ul>
+        </div>
+
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:300ms">
+          <h3 class="font-semibold">4) Interiors &amp; Branding</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>Industrial‑grade, chemical‑resistant flooring</li>
+            <li>Washable wall treatments and practical finishes</li>
+            <li>Lighting design for work efficiency and visual appeal</li>
+            <li>Brand asset implementation: signage, decals, customer displays</li>
+          </ul>
+        </div>
+
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:400ms">
+          <h3 class="font-semibold">5) Handover &amp; Documentation</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>As‑built drawings &amp; O&amp;M manuals</li>
+            <li>Basic operational training for client staff</li>
+          </ul>
+        </div>
+
+        <div class="border p-6 reveal border-neutral-800 rounded-2xl bg-neutral-900/40 step-card" style=";--d:500ms">
+          <h3 class="font-semibold">6) Post‑Completion Support</h3>
+          <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-1">
+            <li>On‑call technical assistance</li>
+            <li>Periodic site inspections (preventive maintenance)</li>
+            <li>Support for upgrades and future expansions</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </main>
-<section class="py-20 bg-neutral-900/40 border-t border-neutral-800"><div class="mx-auto max-w-7xl px-4"><h2 class="text-3xl md:text-4xl font-bold mb-8">🧠 Why Partner With Autostralis</h2><table class="w-full border-collapse"><tbody><tr class="border-b border-neutral-800"><td class="py-3 pr-4 align-top text-red-400">❌ Clients don’t know how to install</td><td class="py-3 pl-4 align-top text-green-400">✅ We manage A–Z: design, construction, and handover</td></tr><tr class="border-b border-neutral-800"><td class="py-3 pr-4 align-top text-red-400">❌ Drainage/slope errors delay projects</td><td class="py-3 pl-4 align-top text-green-400">✅ We plan it right from the start</td></tr><tr class="border-b border-neutral-800"><td class="py-3 pr-4 align-top text-red-400">❌ Bad construction affects your brand</td><td class="py-3 pl-4 align-top text-green-400">✅ We enhance your image with showroom-grade finish</td></tr><tr class="border-b border-neutral-800"><td class="py-3 pr-4 align-top text-red-400">❌ No service team on-site</td><td class="py-3 pl-4 align-top text-green-400">✅ We’re your local execution partner in South India</td></tr></tbody></table></div></section><footer class="py-10 border-t border-neutral-800 mt-12">
-<div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-<p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
-<nav class="text-sm flex flex-wrap gap-3 text-neutral-400"><a class="hover:text-sky-400" href="index.html">Home</a> • <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> • <a class="hover:text-sky-400" href="founder.html">Founder</a> • <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> • <a class="hover:text-sky-400" href="investors.html">For Investors</a> • <a class="hover:text-sky-400" href="process.html">Process</a> • <a class="hover:text-sky-400" href="credibility.html">Credibility</a> • <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> • <a class="hover:text-sky-400" href="faqs.html">FAQs</a> • <a class="hover:text-sky-400" href="contact.html">Contact</a></nav>
-</div>
+
+<section class="py-20 bg-neutral-900/40 border-t border-neutral-800">
+  <div class="mx-auto max-w-7xl px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">🧠 Why Partner With Autostralis</h2>
+    <table class="w-full border-collapse">
+      <tbody>
+        <tr class="border-b border-neutral-800">
+          <td class="py-3 pr-4 align-top text-red-400">❌ Clients don’t know how to install</td>
+          <td class="py-3 pl-4 align-top text-green-400">✅ We manage A–Z: design, construction, and handover</td>
+        </tr>
+        <tr class="border-b border-neutral-800">
+          <td class="py-3 pr-4 align-top text-red-400">❌ Drainage/slope errors delay projects</td>
+          <td class="py-3 pl-4 align-top text-green-400">✅ We plan it right from the start</td>
+        </tr>
+        <tr class="border-b border-neutral-800">
+          <td class="py-3 pr-4 align-top text-red-400">❌ Bad construction affects your brand</td>
+          <td class="py-3 pl-4 align-top text-green-400">✅ We enhance your image with showroom-grade finish</td>
+        </tr>
+        <tr class="border-b border-neutral-800">
+          <td class="py-3 pr-4 align-top text-red-400">❌ No service team on-site</td>
+          <td class="py-3 pl-4 align-top text-green-400">✅ We’re your local execution partner in South India</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="py-10 border-t border-neutral-800 mt-12">
+  <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="text-neutral-400">© 2025 Autostralis. Part of Mangalathu Group.</p>
+    <nav class="text-sm flex flex-wrap gap-3 text-neutral-400">
+      <a class="hover:text-sky-400" href="index.html">Home</a> •
+      <a class="hover:text-sky-400" href="core-strengths.html">Core Strengths</a> •
+      <a class="hover:text-sky-400" href="founder.html">Founder</a> •
+      <a class="hover:text-sky-400" href="manufacturers.html">For Manufacturers</a> •
+      <a class="hover:text-sky-400" href="investors.html">For Investors</a> •
+      <a class="hover:text-sky-400" href="process.html">Process</a> •
+      <a class="hover:text-sky-400" href="credibility.html">Credibility</a> •
+      <a class="hover:text-sky-400" href="case-studies.html">Case Studies</a> •
+      <a class="hover:text-sky-400" href="faqs.html">FAQs</a> •
+      <a class="hover:text-sky-400" href="contact.html">Contact</a>
+    </nav>
+  </div>
 </footer>
+
+<!-- Reveal on scroll -->
 <script>
 (() => {
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('is-visible');
-      }
-    });
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
   }, {threshold:0.25});
   document.addEventListener('DOMContentLoaded', ()=>{
     document.querySelectorAll('#mfg .reveal').forEach(el=> io.observe(el));
   });
 })();
-</script></body>
+</script>
+
+</body>
 </html>
